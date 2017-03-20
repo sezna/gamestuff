@@ -13,6 +13,7 @@ class Tower {
 		this.height = height;
 	}
 	draw() {
+		console.log("drawing tower");
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
 		ctx.fillRect(this.x, this.y, width, height);
@@ -36,4 +37,5 @@ function buildTower(type) {
 		default:
 			console.log("invalid tower type");
 	}
+	towers.push(tower);
 }

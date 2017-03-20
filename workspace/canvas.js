@@ -11,6 +11,8 @@ var currentMoney = 100;
 var currentHealth = 20;
 var currentWave = 0;
 
+setInterval(drawGame(), 3000);
+
 // Main function for game logic
 function advance() {
 	// Check for dead enemies
@@ -45,6 +47,13 @@ function advance() {
 	// Move all enemies forward in their own directions
 	for (var i = 0; i < enemies.length; i++) {
 		enemies[i].move();
+	}
+
+}
+// Main function for drawing game logic
+function drawGame() {
+	for (var i = 0; i < towers.length; i++) {
+		towers[i].draw();
 	}
 
 }
