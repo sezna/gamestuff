@@ -2,7 +2,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 
-ctx.fillStyle = "#ffb261";
+//ctx.fillStyle = "#ffb261";
 
 //ctx.fillRect(0, 580, 640, 60);
 // Setting up stats
@@ -11,7 +11,7 @@ var currentMoney = 100;
 var currentHealth = 20;
 var currentWave = 0;
 
-setInterval(drawGame(), 3000);
+setInterval(drawGame, 1000);
 
 // Main function for game logic
 function advance() {
@@ -52,7 +52,9 @@ function advance() {
 }
 // Main function for drawing game logic
 function drawGame() {
+	console.log("yo");
 	for (var i = 0; i < towers.length; i++) {
+		console.log("drawing tower");
 		towers[i].draw();
 	}
 

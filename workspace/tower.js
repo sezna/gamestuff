@@ -1,12 +1,12 @@
 var towers = [];
 
 class Tower {
-	constructor(team, x, y, laserColor, towerColor, health, width, height) {
+	constructor(team, x, y, laserColor, color, health, width, height) {
 		this.team = team;
 		this.x = x;
 		this.y = y;
 		this.laserColor = laserColor;
-		this.towerColor = towerColor;
+		this.color = color;
 		this.health = health;
 		this.alive = true;
 		this.width = width;
