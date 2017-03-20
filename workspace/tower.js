@@ -16,7 +16,7 @@ class Tower {
 		console.log("drawing tower");
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
-		ctx.fillRect(this.x, this.y, width, height);
+		ctx.fillRect(this.x, this.y, this.width, this.height);
 	}
 	// Removes health from the tower
 	damage(x) {
