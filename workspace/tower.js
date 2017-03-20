@@ -17,11 +17,6 @@ class Tower {
 		ctx.fillStyle = this.color;
 		ctx.fillRect(this.x, this.y, width, height);
 	}
-	// getters
-	get health() {
-		return this.health;
-	}
-
 	// Removes health from the tower
 	damage(x) {
 		this.health = this.health - x;
@@ -30,9 +25,15 @@ class Tower {
 		}
 	}
 }
-buildTower(type) {
+function buildTower(type) {
+	var tower;
 	switch (type) {
-		case 1: 
+		// TODO actually pick a location
+		case 1:
+			tower = new Tower(1, 0, 0, 'red', 100, 10, 10);
+			break;
 			
+		default:
+			console.log("invalid tower type");
 	}
 }
