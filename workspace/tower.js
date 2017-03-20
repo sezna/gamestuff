@@ -31,7 +31,7 @@ function buildTower(type) {
 	switch (type) {
 		// TODO actually pick a location
 		case 1:
-			tower = new Tower(1, 0, 0, 'red', 100, 10, 10);
+			tower = new Tower(1, 0, 0, 'red', 'red', 100, 10, 10);
 			break;
 			
 		default:
