@@ -1,12 +1,14 @@
-class Unit {
-	constructor(team, x, y, v, unitPic, health) {
+var enemies = [];
+class Enemy {
+	constructor(team, x, y, v, color, health, reward) {
 		this.team = team;
 		this.x = x;
 		this.y = y;
 		this.v = v;
-		this.unitPic = unitPic;
+		this.color = color;
 		this.health = health;
 		this.alive = true;
+		this.reward = reward;
 	}
 
 	// getters
@@ -20,6 +22,17 @@ class Unit {
 		if ( this.health <= 0 ) {
 			this.alive = false;
 		}
+	}
+	arrived() {
+		if (this.y > 600) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	move() {
+		this.y = this.y + v;
 	}
 
 }
