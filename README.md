@@ -1,5 +1,10 @@
 # TODO
-put the tasks to do here, and who they are assigned to
+for now, enemies are circles and towers are squares.
+make the ability to put down towers wherever the mouse clicks - Mary
+make enemy difficulty slowly increase
+define a map/path
+currently towers will shoot any/all enemies in their range
+implement money/shop
 
 # quick git tutorial:
 # To get other people's changes:

@@ -11,10 +11,12 @@ var currentMoney = 100;
 var currentHealth = 20;
 var currentWave = 0;
 
-setInterval(drawGame, 1000);
+setInterval(drawGame, 100);
+setInterval(advance, 100);
 
 // Main function for game logic
 function advance() {
+	
 	// Check for dead enemies
 	for (var i = 0, j = enemies.length; i < j; i++) {
 		// you don't need to check this because when an enemy or tower
@@ -35,6 +37,7 @@ function advance() {
 			j--;
 		}
 	}
+	
 	// Check if enemies have entered the base yet
 	for (var i = 0, j = enemies.length; i < j; i++) {
 		if (enemies[i].arrived()) {
@@ -44,20 +47,35 @@ function advance() {
 			j--;
 		}
 	}
+	
 	// Move all enemies forward in their own directions
 	for (var i = 0; i < enemies.length; i++) {
 		enemies[i].move();
 	}
 
+	// Find enemies within range of towers
+	for (var i = 0; i < towers.length; i++) {
+		var inRangeEnemies = towers[i].inRangeEnemies();
+		for (var j = 0; j < inRangeEnemies.length; j++) {
+			towers[i].shoot(inRangeEnemies[j]);
+		}
+	}
+
 }
 // Main function for drawing game logic
 function drawGame() {
-	console.log("yo");
+	// Clear the previous frame.
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	// Draw towers.
 	for (var i = 0; i < towers.length; i++) {
-		console.log("drawing tower");
 		towers[i].draw();
 	}
 
+	// Draw enemies.
+	for (var i = 0; i < enemies.length; i++) {
+		enemies[i].draw();
+	}
 }
 
 //ctx.fillRect(0, 0, 640, 640);

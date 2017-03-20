@@ -1,6 +1,6 @@
 var enemies = [];
 class Enemy {
-	constructor(team, x, y, v, color, health, reward) {
+	constructor(team, x, y, v, color, health, reward, radius) {
 		this.team = team;
 		this.x = x;
 		this.y = y;
@@ -9,13 +9,16 @@ class Enemy {
 		this.health = health;
 		this.alive = true;
 		this.reward = reward;
+		this.radius = radius;
 	}
 
-	// getters
-	get health() {
-		return this.health;
+	// Draws the enemy.
+	draw() {
+		ctx.beginPath();
+		ctx.fillStyle = this.color;
+		ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
+		ctx.fill();
 	}
-
 	// Removes health from the unit
 	damage(x) {
 		this.health = this.health - x;
@@ -32,7 +35,22 @@ class Enemy {
 		}
 	}
 	move() {
-		this.y = this.y + v;
+		this.y = this.y + this.v;
 	}
+
+}
+function createEnemy(type) {
+	var enemy;
+	switch (type) {
+		// TODO determine algorithm for enemy type choice
+		// TODO determine where they spawn
+		// TODO decide on enemy types
+		case 1:
+			enemy = new Enemy(2, 10, 10, 2, 'red', 100, 25, 20);
+			break;
+		default:
+			console.log("invalid enemy type");
+	}
+	enemies.push(enemy);
 
 }

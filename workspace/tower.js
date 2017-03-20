@@ -1,7 +1,7 @@
 var towers = [];
 
 class Tower {
-	constructor(team, x, y, laserColor, color, health, width, height) {
+	constructor(team, x, y, laserColor, color, health, width, height, range, power) {
 		this.team = team;
 		this.x = x;
 		this.y = y;
@@ -11,9 +11,10 @@ class Tower {
 		this.alive = true;
 		this.width = width;
 		this.height = height;
+		this.range = range;
+		this.power = power;
 	}
 	draw() {
-		console.log("drawing tower");
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
 		ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -25,19 +26,40 @@ class Tower {
 			this.alive = false;
 		}
 	}
+	inRangeEnemies() {
+		// TODO decide if we want this to be a circle range
+		var enemiesInRange = [];
+		for ( var i = 0; i < enemies.length; i++) {
+			if (enemies[i].x > this.x - this.range && enemies[i].x < this.x + this.range) {
+				console.log("x bound satisfied");
+				if (enemies[i].y > this.y - this.range && enemies[i].y < this.y + this.range) {
+					enemiesInRange.push(enemies[i]);	
+				}
+			}
+		}
+		return enemiesInRange;
+	}
+	shoot(enemy) {
+		ctx.beginPath();
+		ctx.moveTo(this.x + this.width / 2, this.y + this.height / 2);
+		ctx.lineTo(enemy.x, enemy.y);
+		ctx.strokeStyle = this.laserColor;
+		ctx.stroke();
+		enemy.damage(this.power);
+	}
 }
 function buildTower(type) {
 	var tower;
 	switch (type) {
 		// TODO actually pick a location
-		// this is for you mary, make this function take in a location
+		// this is for mary, make this function take in a location
 		// that is from a mouse click
 		// TODO decide on tower types
 		case 1:
-			tower = new Tower(1, 0, 0, 'red', 'red', 100, 10, 10);
+			tower = new Tower(1, 200, 10, 'red', 'red', 100, 10, 10, 100, 5);
 			break;
 		case 2:
-			tower = new Tower(1, 0, 0, 'blue', 'blue', 100, 10, 10);
+			tower = new Tower(1, 0, 0, 'blue', 'blue', 100, 10, 10, 200, 7);
 			break;
 		default:
 			console.log("invalid tower type");
