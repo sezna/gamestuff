@@ -21,7 +21,7 @@ function advance() {
 	for (var i = 0, j = enemies.length; i < j; i++) {
 		// you don't need to check this because when an enemy or tower
 		// is damaged, it checks and sets the alive status.
-		if (enemies[i].alive == false) {
+		if (enemies[i].alive === false) {
 			currentMoney += enemies[i].reward;
 			enemies.splice(i, 1);
 			i--;
@@ -31,7 +31,7 @@ function advance() {
 
 	// Check for dead towers
 	for (var i = 0, j = towers.length; i < j; i++) {
-		if (towers[i].alive == false) {
+		if (towers[i].alive === false) {
 			towers.splice(i, 1);
 			i--;
 			j--;
