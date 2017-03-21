@@ -4,7 +4,8 @@ var towerType = -1;
 
 
 class Tower {
-	constructor(team, x, y, laserColor, color, health, width, height, range, power) {
+	constructor(price, team, x, y, laserColor, color, health, width, height, range, power) {
+		this.price = price;
 		this.team = team;
 		this.x = x;
 		this.y = y;
@@ -29,12 +30,13 @@ class Tower {
 			this.alive = false;
 		}
 	}
+
+	// Finds all of the enemies in range and returns an array of them.
 	inRangeEnemies() {
 		// TODO decide if we want this to be a circle range
 		var enemiesInRange = [];
 		for ( var i = 0; i < enemies.length; i++) {
 			if (enemies[i].x > this.x - this.range && enemies[i].x < this.x + this.range) {
-				console.log("x bound satisfied");
 				if (enemies[i].y > this.y - this.range && enemies[i].y < this.y + this.range) {
 					enemiesInRange.push(enemies[i]);	
 				}
@@ -42,6 +44,23 @@ class Tower {
 		}
 		return enemiesInRange;
 	}
+	
+	// Gets the prioritized enemy (the one closest to the bottom of the screen).
+	shootHighestPriorityEnemy() {
+		var enemiesInRange = this.inRangeEnemies();
+		if (enemiesInRange.length === 0) {
+			return null;
+		}
+		var highestY = enemiesInRange[0];
+		for ( var i = 0; i < enemiesInRange.length; i++) {
+			if (enemiesInRange[i].y > highestY.y) {
+				highestY = enemiesInRange[i];
+			}
+		}
+		this.shoot(highestY);
+	}
+
+	// Draws a laser to the enemy and damages it.
 	shoot(enemy) {
 		ctx.beginPath();
 		ctx.moveTo(this.x + this.width / 2, this.y + this.height / 2);
@@ -51,24 +70,29 @@ class Tower {
 		enemy.damage(this.power);
 	}
 }
+
+// Builds a tower and adds it to the array of towers.
 function buildTower(pos) {
 	var tower;
-
 	switch (towerType) {
 		// TODO actually pick a location
 		// this is for mary, make this function take in a location
 		// that is from a mouse click
 		// TODO decide on tower types
 		case 1:
-			tower = new Tower(1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
+			tower = new Tower(10, 1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
 			break; 
 		case 2:
-			tower = new Tower(1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
+			tower = new Tower(20, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
 			break;
 		default:
 			console.log("invalid tower type");
 	}
-	towers.push(tower);
+	if (currentMoney > tower.price) {
+		currentMoney -= tower.price;
+		towers.push(tower);
+	}
+	else console.log("not enough money!");
 }
 
 function chooseTowerType(num){

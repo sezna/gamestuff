@@ -57,12 +57,9 @@ function advance() {
 		enemies[i].move();
 	}
 
-	// Find enemies within range of towers
+	// Shoot the highest priority enemy.
 	for (var i = 0; i < towers.length; i++) {
-		var inRangeEnemies = towers[i].inRangeEnemies();
-		for (var j = 0; j < inRangeEnemies.length; j++) {
-			towers[i].shoot(inRangeEnemies[j]);
-		}
+		towers[i].shootHighestPriorityEnemy();
 	}
 
 }
@@ -80,6 +77,9 @@ function drawGame() {
 	for (var i = 0; i < enemies.length; i++) {
 		enemies[i].draw();
 	}
+
+	// Draw money.
+	document.getElementById("money").innerHTML = currentMoney;
 }
 
 //ctx.fillRect(0, 0, 640, 640);
