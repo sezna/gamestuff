@@ -12,8 +12,8 @@ var currentHealth = 20;
 var currentWave = 0;
 
 
-setInterval(drawGame, 100);
-setInterval(advance, 100);
+setInterval(drawGame, 50);
+setInterval(advance, 50);
 
 // Listen for mouse click all the time
 canvas.addEventListener("click", getTowerPos,false);
@@ -80,6 +80,9 @@ function drawGame() {
 
 	// Draw money.
 	document.getElementById("money").innerHTML = currentMoney;
+
+	// Draw health.
+	document.getElementById("health").innerHTML = currentHealth;
 }
 
 //ctx.fillRect(0, 0, 640, 640);
