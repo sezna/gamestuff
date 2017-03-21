@@ -47,14 +47,16 @@ class Enemy {
 
 function createEnemy(type) {
 	var enemy;
+	var x = Math.floor(Math.random() * 600);
 	switch (type) {
 		// TODO determine algorithm for enemy type choice
 		// TODO determine where they spawn - right now it is just random
 		// TODO decide on enemy types
 		case 1:
-			var x = Math.floor(Math.random() * 600);
-			enemy = new Enemy(2, x, 10, 2, 'red', 100, 25, 20);
+			enemy = new Enemy(2, x, 10, 5, 'red', 100, 25, 20);
 			break;
+		case 2:
+			enemy = new Enemy(2, x, 10, 2, 'green', 300, 10, 10);
 		default:
 			console.log("invalid enemy type");
 	}
