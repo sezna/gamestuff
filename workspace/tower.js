@@ -60,8 +60,8 @@ function buildTower(pos) {
 		// that is from a mouse click
 		// TODO decide on tower types
 		case 1:
-			tower = new Tower(1, pos.x, pox.y, 'red', 'red', 100, 10, 10, 100, 5);
-			break;
+			tower = new Tower(1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
+			break; 
 		case 2:
 			tower = new Tower(1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
 			break;

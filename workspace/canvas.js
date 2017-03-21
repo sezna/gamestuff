@@ -15,6 +15,9 @@ var currentWave = 0;
 setInterval(drawGame, 100);
 setInterval(advance, 100);
 
+// Listen for mouse click all the time
+canvas.addEventListener("click", getTowerPos,false);
+
 // Main function for game logic
 function advance() {
 	
