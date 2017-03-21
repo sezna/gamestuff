@@ -11,6 +11,7 @@ var currentMoney = 100;
 var currentHealth = 20;
 var currentWave = 0;
 
+
 setInterval(drawGame, 100);
 setInterval(advance, 100);
 
@@ -79,3 +80,8 @@ function drawGame() {
 }
 
 //ctx.fillRect(0, 0, 640, 640);
+function getTowerPos(evt){
+	var rect = canvas.getBoundingClientRect();
+	var	pos = {x: evt.clientX - rect.left, y: evt.clientY - rect.top};
+	buildTower(pos)
+}

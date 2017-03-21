@@ -1,4 +1,7 @@
 var towers = [];
+//TBD
+var towerType = -1;
+
 
 class Tower {
 	constructor(team, x, y, laserColor, color, health, width, height, range, power) {
@@ -48,21 +51,27 @@ class Tower {
 		enemy.damage(this.power);
 	}
 }
-function buildTower(type) {
+function buildTower(pos) {
 	var tower;
-	switch (type) {
+
+	switch (towerType) {
 		// TODO actually pick a location
 		// this is for mary, make this function take in a location
 		// that is from a mouse click
 		// TODO decide on tower types
 		case 1:
-			tower = new Tower(1, 200, 10, 'red', 'red', 100, 10, 10, 100, 5);
+			tower = new Tower(1, pos.x, pox.y, 'red', 'red', 100, 10, 10, 100, 5);
 			break;
 		case 2:
-			tower = new Tower(1, 0, 0, 'blue', 'blue', 100, 10, 10, 200, 7);
+			tower = new Tower(1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
 			break;
 		default:
 			console.log("invalid tower type");
 	}
 	towers.push(tower);
 }
+
+function chooseTowerType(num){
+	towerType = num;
+}
+
