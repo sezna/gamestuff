@@ -7,6 +7,7 @@
 * make sure you can't place towers on top of other towers
 * balance game so it is hard
 * maybe enemies should change color instead of size as they get more difficult
+* indicate which tower is selected
 
 # quick git tutorial:
 # To get other people's changes:

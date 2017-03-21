@@ -13,7 +13,7 @@ class Enemy {
 		this.radius = radius;
 	}
 
-	// Draws the enemy.
+	// raws the enemy.
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
@@ -51,7 +51,7 @@ function createEnemy() {
 	var enemy;
 	var x = Math.floor(Math.random() * 600);
 	// gets smaller as they get stronger, to a minimum of 5. Max is 100.
-	var enemyRadius = 100 - ( enemiesKilled / 20 ); 
+	var enemyRadius = 10; // maybe make a bigger/harder boss?
 	// they get faster too
 	var enemyVelocity = 1 + ( enemiesKilled / 50 );
 	// reward gets bigger
@@ -59,7 +59,8 @@ function createEnemy() {
 	// they get stronger
 	var enemyHealth = 200 + ( enemiesKilled / 10 );
 	//constructor(team, x, y, v, color, health, reward, radius) {
-	enemy = new Enemy(2, x, 10, enemyVelocity, 'green', enemyHealth, enemyReward, enemyRadius);
+	var enemyColor = 'green';
+	enemy = new Enemy(2, x, 10, enemyVelocity, enemyColor, enemyHealth, enemyReward, enemyRadius);
 	enemies.push(enemy);
 
 }

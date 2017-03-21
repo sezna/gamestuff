@@ -1,6 +1,6 @@
 var towers = [];
 //TBD
-var towerType = -1;
+var towerType = 1;
 
 
 class Tower {

@@ -62,6 +62,11 @@ function advance() {
 		towers[i].shootHighestPriorityEnemy();
 	}
 
+	// Spawn new enemies.
+	if (Math.random() < .1) {
+		createEnemy();
+	}
+
 }
 // Main function for drawing game logic
 function drawGame() {
