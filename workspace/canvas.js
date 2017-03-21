@@ -11,6 +11,7 @@ var currentMoney = 100;
 var currentHealth = 20;
 var currentWave = 0;
 
+
 setInterval(drawGame, 100);
 setInterval(advance, 100);
 
@@ -21,7 +22,7 @@ function advance() {
 	for (var i = 0, j = enemies.length; i < j; i++) {
 		// you don't need to check this because when an enemy or tower
 		// is damaged, it checks and sets the alive status.
-		if (enemies[i].alive == false) {
+		if (enemies[i].alive === false) {
 			currentMoney += enemies[i].reward;
 			enemies.splice(i, 1);
 			i--;
@@ -31,7 +32,7 @@ function advance() {
 
 	// Check for dead towers
 	for (var i = 0, j = towers.length; i < j; i++) {
-		if (towers[i].alive == false) {
+		if (towers[i].alive === false) {
 			towers.splice(i, 1);
 			i--;
 			j--;
@@ -79,3 +80,8 @@ function drawGame() {
 }
 
 //ctx.fillRect(0, 0, 640, 640);
+function getTowerPos(evt){
+	var rect = canvas.getBoundingClientRect();
+	var	pos = {x: evt.clientX - rect.left, y: evt.clientY - rect.top};
+	buildTower(pos)
+}
