@@ -1,9 +1,12 @@
 # TODO
 * for now, enemies are circles and towers are squares.
-* make enemy difficulty slowly increase
+* make enemy difficulty slowly increase -- done but not smartly
+* make lasers draw in background, shoot edge of enemies instead of center
 * define a map/path
 * implement money/shop
 * make sure you can't place towers on top of other towers
+* balance game so it is hard
+* maybe enemies should change color instead of size as they get more difficult
 
 # quick git tutorial:
 # To get other people's changes:

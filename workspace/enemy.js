@@ -1,4 +1,5 @@
 var enemies = [];
+var enemiesKilled = 0;
 class Enemy {
 	constructor(team, x, y, v, color, health, reward, radius) {
 		this.team = team;
@@ -25,6 +26,7 @@ class Enemy {
 		this.health = this.health - x;
 		if ( this.health <= 0 ) {
 			this.alive = false;
+			enemiesKilled += 1;
 		}
 	}
 
@@ -45,21 +47,19 @@ class Enemy {
 
 }
 
-function createEnemy(type) {
+function createEnemy() {
 	var enemy;
 	var x = Math.floor(Math.random() * 600);
-	switch (type) {
-		// TODO determine algorithm for enemy type choice
-		// TODO determine where they spawn - right now it is just random
-		// TODO decide on enemy types
-		case 1:
-			enemy = new Enemy(2, x, 10, 5, 'red', 100, 25, 20);
-			break;
-		case 2:
-			enemy = new Enemy(2, x, 10, 2, 'green', 300, 10, 10);
-		default:
-			console.log("invalid enemy type");
-	}
+	// gets smaller as they get stronger, to a minimum of 5. Max is 100.
+	var enemyRadius = 100 - ( enemiesKilled / 20 ); 
+	// they get faster too
+	var enemyVelocity = 1 + ( enemiesKilled / 50 );
+	// reward gets bigger
+	var enemyReward = Math.floor(5 + ( enemiesKilled / 100 ));
+	// they get stronger
+	var enemyHealth = 200 + ( enemiesKilled / 10 );
+	//constructor(team, x, y, v, color, health, reward, radius) {
+	enemy = new Enemy(2, x, 10, enemyVelocity, 'green', enemyHealth, enemyReward, enemyRadius);
 	enemies.push(enemy);
 
 }

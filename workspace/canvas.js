@@ -83,6 +83,9 @@ function drawGame() {
 
 	// Draw health.
 	document.getElementById("health").innerHTML = currentHealth;
+
+	// Draw enemies killed.
+	document.getElementById("killed").innerHTML = enemiesKilled;
 }
 
 //ctx.fillRect(0, 0, 640, 640);
