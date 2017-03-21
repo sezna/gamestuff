@@ -1,9 +1,9 @@
 # TODO
-*for now, enemies are circles and towers are squares.
-*make enemy difficulty slowly increase
-*define a map/path
-*implement money/shop
-*make sure you can't place towers on top of other towers
+* for now, enemies are circles and towers are squares.
+* make enemy difficulty slowly increase
+* define a map/path
+* implement money/shop
+* make sure you can't place towers on top of other towers
 
 # quick git tutorial:
 # To get other people's changes:
