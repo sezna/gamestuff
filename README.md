@@ -8,6 +8,8 @@
 * balance game so it is hard
 * maybe enemies should change color instead of size as they get more difficult
 * indicate which tower is selected
+* draw tower while hovering
+* pick initial tower
 
 # quick git tutorial:
 # To get other people's changes:
