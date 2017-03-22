@@ -10,7 +10,7 @@ var ctx = canvas.getContext("2d");
 var currentMoney = 100;
 var currentHealth = 20;
 var currentWave = 0;
-
+var cursorPosition = null;
 
 setInterval(drawGame, 100);
 setInterval(advance, 100);
@@ -91,6 +91,15 @@ function drawGame() {
 
 	// Draw enemies killed.
 	document.getElementById("killed").innerHTML = enemiesKilled;
+
+	// Draw cursor hover.
+	if ( cursorPosition != null) {
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(128, 128, 128, 0.2)";
+		ctx.arc(cursorPosition.x, cursorPosition.y, towerRange, 2 * Math.PI, false);
+		ctx.fill();
+		ctx.closePath();
+	}
 }
 
 //ctx.fillRect(0, 0, 640, 640);

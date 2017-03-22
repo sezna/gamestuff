@@ -1,7 +1,7 @@
 var towers = [];
 //TBD
 var towerType = 1;
-
+var towerRange = 100;
 
 class Tower {
 	constructor(price, team, x, y, laserColor, color, health, width, height, range, power) {
@@ -103,5 +103,21 @@ function buildTower(pos) {
 
 function chooseTowerType(num){
 	towerType = num;
+	// this totally sucks but we have to match the tower range with the tower type here.
+	switch (towerType) {
+		case 1:
+			towerRange = 100;
+			break;
+		case 2:
+			towerRange = 200;
+			break;
+		default: 
+			towerRange = 100;
+	}
 }
 
+
+function handleMouseHover(event) {
+	var rect = canvas.getBoundingClientRect();
+	cursorPosition = { x: event.clientX - rect.left, y: event.clientY - rect.top };
+}
