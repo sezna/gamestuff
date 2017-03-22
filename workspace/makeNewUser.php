@@ -32,12 +32,13 @@
 	//echo $user;
 	
 	if(strcmp($pass,$pass2) == 0){
-		$query = "INSERT into users Values (".$user.", ".$pass.", 0,0,0)" ;
+		$query = "INSERT into users Values ('".$user."', '".$pass."', 0,0,0)" ;
+		echo $query;
 		$result = mysqli_query($conn,$query);
 		header('Location: index.html');
 
 	}else{
-		echo "<html><script> window.alert('Passwords don't match); </script></html>"
+		//echo "<html><script> window.alert('Passwords don't match); </script></html>";
 		header('Location: newUser.php');	
 	}
 	
