@@ -65,8 +65,17 @@ class Tower {
 		ctx.beginPath();
 		ctx.moveTo(this.x + this.width / 2, this.y + this.height / 2);
 		ctx.lineTo(enemy.x, enemy.y);
+		ctx.moveTo(this.x + this.width / 3, this.y + this.height / 3);
+		ctx.lineTo(enemy.x, enemy.y);
+		ctx.moveTo(this.x + this.width / 4, this.y + this.height / 4);
+		ctx.lineTo(enemy.x, enemy.y);
+		ctx.moveTo(this.x + this.width / 5, this.y + this.height / 5);
+		ctx.lineTo(enemy.x, enemy.y);
+		ctx.moveTo(this.x + this.width / 6, this.y + this.height / 6);
+		ctx.lineTo(enemy.x, enemy.y);
 		ctx.strokeStyle = this.laserColor;
 		ctx.stroke();
+
 		enemy.damage(this.power);
 	}
 }
@@ -75,9 +84,6 @@ class Tower {
 function buildTower(pos) {
 	var tower;
 	switch (towerType) {
-		// TODO actually pick a location
-		// this is for mary, make this function take in a location
-		// that is from a mouse click
 		// TODO decide on tower types
 		case 1:
 			tower = new Tower(10, 1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	

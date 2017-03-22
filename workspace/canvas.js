@@ -12,8 +12,8 @@ var currentHealth = 20;
 var currentWave = 0;
 
 
-setInterval(drawGame, 50);
-setInterval(advance, 50);
+setInterval(drawGame, 100);
+setInterval(advance, 100);
 
 // Listen for mouse click all the time
 canvas.addEventListener("click", getTowerPos,false);
