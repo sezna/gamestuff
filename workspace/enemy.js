@@ -13,9 +13,10 @@ class Enemy {
 		this.alive = true;
 		this.reward = reward;
 		this.radius = radius;
+		this.pathStage = 0;
 	}
 
-	// raws the enemy.
+	// Draws the enemy.
 	draw() {
 		ctx.beginPath();
 		ctx.fillStyle = "#000000" //In case of an invalid color
@@ -46,7 +47,26 @@ class Enemy {
 
 	// Moves the enemy's y pos by its velocity.
 	move() {
-		this.y = this.y + this.v;
+		//pathstage not the last one
+		if(this.y > turningPoints[this.pathStage+1].y){
+			this.pathStage +=1;
+		}
+		switch(turningPoints[this.pathStage]){
+			case 3:
+				// Right
+				this.x += this.v;
+				break;
+			case 6:
+				// Down
+				this.y += this.v;
+				break;
+			case 9:
+				// Left
+				this.x -= this.v;
+				break;
+			default:
+				console.log("You are definitely doing something wrong");
+		}
 	}
 
 }
