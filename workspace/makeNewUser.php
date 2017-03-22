@@ -33,29 +33,21 @@
 	
 	if(strcmp($pass,$pass2) == 0){
 		$query = "INSERT into users Values ('".$user."', '".$pass."', 0,0,0)" ;
-		echo $query;
+		//echo $query;
 		$result = mysqli_query($conn,$query);
-		header('Location: index.html');
+		if($result == TRUE){
+			header('Location: index.html');	
+		} else {
+			header('Location: newUser.php');
+		}
+		
 
 	}else{
 		//echo "<html><script> window.alert('Passwords don't match); </script></html>";
 		header('Location: newUser.php');	
 	}
-	
-	//where username = $user AND password = $pass
 
-
-	$result = mysqli_query($conn,$query);
-
-	if ($result->num_rows > 0) {
-    // output data of each row
-	    while($row = mysqli_fetch_assoc($result)) {
-	        //echo $row["id"]. " - Name: " . $row["username"]. " " . $row["password"]. "<br>";
-	        $_SESSION["userName"] = $row["username"];
-	        header('Location: game.html');
-	    }
-	} else {
-    	header('Location: index.html');	
-	}
+	//echo "<html><script> window.alert('Passwords don't match); </script></html>";
+   	//header('Location: newUser.php');	
 
 ?>
