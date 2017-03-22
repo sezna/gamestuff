@@ -12,7 +12,7 @@ var currentHealth = 20;
 var currentWave = 0;
 var cursorPosition = null;
 
-setInterval(drawGame, 100);
+setInterval(drawGame, 50);
 setInterval(advance, 100);
 
 // Listen for mouse click all the time
