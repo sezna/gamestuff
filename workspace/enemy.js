@@ -1,5 +1,7 @@
 var enemies = [];
 var enemiesKilled = 0;
+var maxHealth = 200;
+
 class Enemy {
 	constructor(team, x, y, v, color, health, reward, radius) {
 		this.team = team;
@@ -16,9 +18,11 @@ class Enemy {
 	// raws the enemy.
 	draw() {
 		ctx.beginPath();
-		ctx.fillStyle = this.color;
+		ctx.fillStyle = "#000000" //In case of an invalid color
+		ctx.fillStyle = "#00"+(Math.floor((this.health/maxHealth)*255)).toString(16)+"00";
 		ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
 		ctx.fill();
+		ctx.closePath();
 	}
 
 	// Removes health from the unit
@@ -58,6 +62,7 @@ function createEnemy() {
 	var enemyReward = Math.floor(5 + ( enemiesKilled / 100 ));
 	// they get stronger
 	var enemyHealth = 200 + ( enemiesKilled / 10 );
+	maxHealth = enemyHealth;
 	//constructor(team, x, y, v, color, health, reward, radius) {
 	var enemyColor = 'green';
 	enemy = new Enemy(2, x, 10, enemyVelocity, enemyColor, enemyHealth, enemyReward, enemyRadius);

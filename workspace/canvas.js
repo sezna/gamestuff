@@ -106,5 +106,15 @@ function drawGame() {
 function getTowerPos(evt){
 	var rect = canvas.getBoundingClientRect();
 	var	pos = {x: evt.clientX - rect.left, y: evt.clientY - rect.top};
-	buildTower(pos)
+	
+	var collides = 0;
+	for (var i = 0, j = towers.length; i < j; i++) {
+		if ((Math.abs(towers[i].x - pos.x)<15)&&(Math.abs(towers[i].y - pos.y)<15)) {
+			collides = 1;
+		}
+	}
+
+	if(!collides){
+	buildTower(pos);
+	}
 }

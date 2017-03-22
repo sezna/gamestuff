@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	
 
 	if ($_SERVER['SERVER_NAME'] != "dias11.cs.trinity.edu") {
     	echo "<p>You must access this page from on campus through dias11.</p></body></html>";
@@ -26,28 +26,28 @@
 	$pass = "";
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
  		$user =$_POST["username"];
-		$pass =$_POST["password"];
+		$pass =$_POST["password1"];
+		$pass2 = $_POST["password2"];
 	}
-	echo $user;
+	//echo $user;
 	
+	if(strcmp($pass,$pass2) == 0){
+		$query = "INSERT into users Values ('".$user."', '".$pass."', 0,0,0)" ;
+		//echo $query;
+		$result = mysqli_query($conn,$query);
+		if($result == TRUE){
+			header('Location: index.html');	
+		} else {
+			header('Location: newUser.php');
+		}
+		
 
-
-	$query = "SELECT * From users where username = '" . $user . "' AND password = '" . $pass."'" ;
-
-	//where username = $user AND password = $pass
-
-
-	$result = mysqli_query($conn,$query);
-
-	if ($result->num_rows > 0) {
-    // output data of each row
-	    while($row = mysqli_fetch_assoc($result)) {
-	        //echo $row["id"]. " - Name: " . $row["username"]. " " . $row["password"]. "<br>";
-	        $_SESSION["userName"] = $row["username"];
-	        header('Location: game.html');
-	    }
-	} else {
-    	header('Location: index.html');	
+	}else{
+		//echo "<html><script> window.alert('Passwords don't match); </script></html>";
+		header('Location: newUser.php');	
 	}
+
+	//echo "<html><script> window.alert('Passwords don't match); </script></html>";
+   	//header('Location: newUser.php');	
 
 ?>
