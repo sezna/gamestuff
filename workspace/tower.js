@@ -8,7 +8,7 @@ class Tower {
 		this.price = price;
 		this.team = team;
 		this.x = x;
-		this.y = y;
+		this.y = y;		
 		this.laserColor = laserColor;
 		this.color = color;
 		this.health = health;
@@ -17,11 +17,16 @@ class Tower {
 		this.height = height;
 		this.range = range;
 		this.power = power;
+		this.rotation = 0;
 	}
 	draw() {
+		ctx.save();
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
-		ctx.fillRect(this.x, this.y, this.width, this.height);
+		ctx.translate(this.x, this.y);
+		ctx.rotate(this.rotation);
+		ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
+		ctx.restore();
 	}
 	// Removes health from the tower
 	damage(x) {
@@ -61,7 +66,11 @@ class Tower {
 	}
 
 	// Draws a laser to the enemy and damages it.
+	// Also rotates the tower
 	shoot(enemy) {
+		var dx = this.x-enemy.x;
+		var dy = this.y-enemy.y;
+		this.rotation = Math.atan(dy/dx);
 		ctx.beginPath();
 		ctx.moveTo(this.x + this.width / 2, this.y + this.height / 2);
 		ctx.lineTo(enemy.x, enemy.y);
