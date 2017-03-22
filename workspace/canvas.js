@@ -10,9 +10,9 @@ var ctx = canvas.getContext("2d");
 var currentMoney = 100;
 var currentHealth = 20;
 var currentWave = 0;
+var cursorPosition = null;
 
-
-setInterval(drawGame, 100);
+setInterval(drawGame, 50);
 setInterval(advance, 100);
 
 // Listen for mouse click all the time
@@ -91,11 +91,30 @@ function drawGame() {
 
 	// Draw enemies killed.
 	document.getElementById("killed").innerHTML = enemiesKilled;
+
+	// Draw cursor hover.
+	if ( cursorPosition != null) {
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(128, 128, 128, 0.2)";
+		ctx.arc(cursorPosition.x, cursorPosition.y, towerRange, 2 * Math.PI, false);
+		ctx.fill();
+		ctx.closePath();
+	}
 }
 
 //ctx.fillRect(0, 0, 640, 640);
 function getTowerPos(evt){
 	var rect = canvas.getBoundingClientRect();
 	var	pos = {x: evt.clientX - rect.left, y: evt.clientY - rect.top};
-	buildTower(pos)
+	
+	var collides = 0;
+	for (var i = 0, j = towers.length; i < j; i++) {
+		if ((Math.abs(towers[i].x - pos.x)<15)&&(Math.abs(towers[i].y - pos.y)<15)) {
+			collides = 1;
+		}
+	}
+
+	if(!collides){
+	buildTower(pos);
+	}
 }
