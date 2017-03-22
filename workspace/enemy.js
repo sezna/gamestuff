@@ -47,22 +47,31 @@ class Enemy {
 
 	// Moves the enemy's y pos by its velocity.
 	move() {
-		//pathstage not the last one
+		/*
 		if(this.pathStage < turningPoints.length && this.y > turningPoints[this.pathStage+1].y){
 			this.pathStage +=1;
-		}
+		}*/
 		switch(turningPoints[this.pathStage].direction){
 			case 3:
 				// Right
 				this.x += this.v;
+                if(this.x > turningPoints[this.pathStage+1].x){
+                    this.pathStage += 1;
+                }
 				break;
 			case 6:
 				// Down
 				this.y += this.v;
+                if(this.pathStage < (turningPoints.length-1) && this.y > turningPoints[this.pathStage+1].y){
+                    this.pathStage += 1;
+                }
 				break;
 			case 9:
 				// Left
 				this.x -= this.v;
+                if(this.x < turningPoints[this.pathStage+1].x){
+                    this.pathStage += 1;
+                }
 				break;
 			default:
 				console.log("You are definitely doing something wrong");
