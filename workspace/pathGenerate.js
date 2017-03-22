@@ -1,15 +1,15 @@
-var breakPointNum = 8;
+var turningPointNum = 8;
 
 var turningPoints = [];
 
 
-var countdown = turningPoints;
+var countdown = turningPointNum;
 // Randomly Generate Points
 while(countdown >0){
 	var thispoint = {
 		x: Math.floor(Math.random()*canvas.width),
 		y: Math.floor(Math.random()*canvas.width),
-		direction: 6;
+		direction: 6
 	};
 	turningPoints.push(thispoint);
 	countdown--;

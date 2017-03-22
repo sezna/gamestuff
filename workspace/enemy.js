@@ -48,10 +48,10 @@ class Enemy {
 	// Moves the enemy's y pos by its velocity.
 	move() {
 		//pathstage not the last one
-		if(this.y > turningPoints[this.pathStage+1].y){
+		if(this.pathStage < turningPoints.length && this.y > turningPoints[this.pathStage+1].y){
 			this.pathStage +=1;
 		}
-		switch(turningPoints[this.pathStage]){
+		switch(turningPoints[this.pathStage].direction){
 			case 3:
 				// Right
 				this.x += this.v;
@@ -73,7 +73,8 @@ class Enemy {
 
 function createEnemy() {
 	var enemy;
-	var x = Math.floor(Math.random() * 600);
+	//var x = Math.floor(Math.random() * 600);
+	var x = turningPoints[0].x;
 	// gets smaller as they get stronger, to a minimum of 5. Max is 100.
 	var enemyRadius = 10; // maybe make a bigger/harder boss?
 	// they get faster too
@@ -85,7 +86,7 @@ function createEnemy() {
 	maxHealth = enemyHealth;
 	//constructor(team, x, y, v, color, health, reward, radius) {
 	var enemyColor = 'green';
-	enemy = new Enemy(2, x, 10, enemyVelocity, enemyColor, enemyHealth, enemyReward, enemyRadius);
+	enemy = new Enemy(2, x, 0, enemyVelocity, enemyColor, enemyHealth, enemyReward, enemyRadius);
 	enemies.push(enemy);
 
 }
