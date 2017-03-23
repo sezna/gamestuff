@@ -112,10 +112,16 @@ function buildTower(pos) {
 	switch (towerType) {
 		// TODO decide on tower types
 		case 1:
-			tower = new Tower(1, 10, 1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
+			tower = new Tower(1, 30, 1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
 			break; 
 		case 2:
-			tower = new Tower(2, 20, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
+			tower = new Tower(1, 80, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
+			break;
+		case 3:
+			tower = new Tower(1, 200, 1, pos.x, pos.y, 'pink', 'pink', 100, 10, 10, 200, 40);
+			break;
+		case 4:
+			tower = new Tower(1, 400, 1, pos.x, pos.y, 'cyan', 'cyan', 100, 10, 10, 400, 30);
 			break;
 		default:
 			console.log("invalid tower type");
@@ -136,6 +142,12 @@ function chooseTowerType(num){
 			break;
 		case 2:
 			towerRange = 200;
+			break;
+		case 3:
+			towerRange = 200;
+			break;
+		case 4:
+			towerRange = 400;
 			break;
 		default: 
 			towerRange = 100;
