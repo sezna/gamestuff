@@ -8,7 +8,7 @@ var gameOver = false;
 // Setting up stats
 var maxHealth = 20;
 var currentMoney = 100;
-var currentHealth = 0;
+var currentHealth = 20;
 var currentWave = 0;
 var cursorPosition = null;
 
