@@ -12,7 +12,6 @@ var currentHealth = 1;
 var currentWave = 0;
 var cursorPosition = null;
 
-setInterval(drawGame, 50);
 setInterval(advance, 50);
 
 // Listen for mouse click all the time
@@ -20,6 +19,7 @@ canvas.addEventListener("click", getTowerPos,false);
 
 // Main function for game logic
 function advance() {
+	drawGame();
 	if(gameOver == false){
 		// Check for dead enemies
 		for (var i = 0, j = enemies.length; i < j; i++) {
