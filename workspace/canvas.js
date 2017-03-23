@@ -114,7 +114,8 @@ function drawGame() {
   		}
   		//alert("Updating Table");
   		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.font = "30px Arial";
+  		ctx.fillStyle = "red";
+		ctx.font = "30px Comic Sans MS";
 		ctx.fillText("Click to Restart",canvas.width/2,canvas.height/2);
  	 	console.log(enemiesKilled);
 	}
