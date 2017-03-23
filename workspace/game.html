@@ -10,17 +10,12 @@
 </head>
 
 <body>
-	<div class="video-background">
-		    <div class="video-foreground">
-		    	      <iframe src="https://www.youtube.com/embed/Ohzt9tlGeDs?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen></iframe>
-			</div>
-			https://www.youtube.com/watch?v=Ohzt9tlGeDs
-		</div>
-
-		<div id="vidtop-content">
-			<div class="vid-info">
+	
 <center>
 	<canvas id="canvas" width="640" height="640" style="border:2px solid #000000;" onmousemove="handleMouseHover(event)"> </canvas>
+	<img id="tower1img" src="tower1.gif" style="display:none;">
+	<img id="tower2img" src="tower2.gif" style="display:none;">
+
 <br>
 <input id="tower1" type="button" value="Build Tower 1" onclick="chooseTowerType(1);"/>
 <input id="tower2" type="button" value="Build Tower 2" onclick="chooseTowerType(2);"/>
