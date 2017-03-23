@@ -8,7 +8,7 @@ var gameOver = false;
 // Setting up stats
 var maxHealth = 20;
 var currentMoney = 100;
-var currentHealth = 1;
+var currentHealth = 20;
 var currentWave = 0;
 var cursorPosition = null;
 
@@ -45,6 +45,7 @@ function advance() {
 		// Check if enemies have entered the base yet
 		for (var i = 0, j = enemies.length; i < j; i++) {
 			if (enemies[i].arrived()) {
+				console.log("you were hit");
 				currentHealth -= 1;
 				enemies.splice(i, 1);
 				i--;
@@ -117,7 +118,6 @@ function drawGame() {
   		ctx.fillStyle = "red";
 		ctx.font = "30px Comic Sans MS";
 		ctx.fillText("Click to Restart",canvas.width/2,canvas.height/2);
- 	 	console.log(enemiesKilled);
 	}
 		
 	}
