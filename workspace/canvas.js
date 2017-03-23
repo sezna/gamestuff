@@ -13,7 +13,7 @@ var currentWave = 0;
 var cursorPosition = null;
 
 setInterval(drawGame, 50);
-setInterval(advance, 100);
+setInterval(advance, 50);
 
 // Listen for mouse click all the time
 canvas.addEventListener("click", getTowerPos,false);

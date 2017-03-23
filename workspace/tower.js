@@ -93,6 +93,7 @@ class Tower {
 		ctx.beginPath();
 		ctx.moveTo(this.x, this.y);
 		ctx.lineTo(enemy.x, enemy.y);
+		ctx.closePath();
 
 		/*ctx.moveTo(this.x + this.width / 2, this.y + this.height / 2);
 		ctx.lineTo(enemy.x, enemy.y);
