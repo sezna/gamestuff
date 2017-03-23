@@ -7,7 +7,7 @@ var gameOver = false;
 //ctx.fillRect(0, 580, 640, 60);
 // Setting up stats
 var maxHealth = 1;
-var currentMoney = 100;
+var currentMoney = 100000;
 var currentHealth = 1;
 var currentWave = 0;
 var cursorPosition = null;

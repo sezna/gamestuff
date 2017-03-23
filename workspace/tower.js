@@ -1,6 +1,8 @@
 
 var tower1img = document.getElementById("tower1img");
 var tower2img = document.getElementById("tower2img");
+var tower3img = document.getElementById("tower3img");
+var tower4img = document.getElementById("tower4img");
 
 var towers = [];
 //TBD
@@ -34,6 +36,10 @@ class Tower {
 		ctx.drawImage(tower1img, -16,-16, 32, 32);
 		if(this.type == 2)
 		ctx.drawImage(tower2img, -16,-16, 32, 32);
+		if(this.type == 3)
+		ctx.drawImage(tower3img, -16,-16, 32, 32);
+		if(this.type == 4)
+		ctx.drawImage(tower4img, -16,-16, 32, 32);
 		//ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
 		ctx.restore();
 	}
@@ -115,13 +121,13 @@ function buildTower(pos) {
 			tower = new Tower(1, 30, 1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
 			break; 
 		case 2:
-			tower = new Tower(1, 80, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
+			tower = new Tower(2, 80, 1, pos.x, pos.y, 'yellow', 'yellow', 100, 10, 10, 200, 7);
 			break;
 		case 3:
-			tower = new Tower(1, 200, 1, pos.x, pos.y, 'pink', 'pink', 100, 10, 10, 200, 40);
+			tower = new Tower(3, 200, 1, pos.x, pos.y, 'green', 'green', 100, 10, 10, 200, 40);
 			break;
 		case 4:
-			tower = new Tower(1, 400, 1, pos.x, pos.y, 'cyan', 'cyan', 100, 10, 10, 400, 30);
+			tower = new Tower(4, 400, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 400, 30);
 			break;
 		default:
 			console.log("invalid tower type");
