@@ -128,7 +128,7 @@ function buildTower(pos) {
 			tower = new Tower(3, 400, 1, pos.x, pos.y, 'green', 'green', 100, 10, 10, 200, 10);
 			break;
 		case 4:
-			tower = new Tower(4, 1000, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 400, 30);
+			tower = new Tower(4, 1000, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 300, 30);
 			break;
 		default:
 			console.log("invalid tower type");
@@ -154,7 +154,7 @@ function chooseTowerType(num){
 			towerRange = 200;
 			break;
 		case 4:
-			towerRange = 400;
+			towerRange = 300;
 			break;
 		default: 
 			towerRange = 100;
