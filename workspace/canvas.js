@@ -64,7 +64,7 @@ function advance() {
 		}
 	
 		// Spawn new enemies.
-		if (Math.random() < .1) {
+		if (Math.random() < .1 + ( enemiesKilled * .0001)) {
 			createEnemy();
 		}
 	}

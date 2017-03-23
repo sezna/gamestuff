@@ -71,13 +71,13 @@ class Tower {
 		if (enemiesInRange.length === 0) {
 			return null;
 		}
-		var highestY = enemiesInRange[0];
+		var lowestHealth = enemiesInRange[0];
 		for ( var i = 0; i < enemiesInRange.length; i++) {
-			if (enemiesInRange[i].y > highestY.y) {
-				highestY = enemiesInRange[i];
+			if (enemiesInRange[i].health < lowestHealth.health) {
+				lowestHealth = enemiesInRange[i];
 			}
 		}
-		this.shoot(highestY);
+		this.shoot(lowestHealth);
 	}
 
 	// Draws a laser to the enemy and damages it.
