@@ -1,10 +1,15 @@
+
+var tower1img = document.getElementById("tower1img");
+var tower2img = document.getElementById("tower2img");
+
 var towers = [];
 //TBD
 var towerType = 1;
 var towerRange = 100;
 
 class Tower {
-	constructor(price, team, x, y, laserColor, color, health, width, height, range, power) {
+	constructor(type, price, team, x, y, laserColor, color, health, width, height, range, power) {
+		this.type = type;		
 		this.price = price;
 		this.team = team;
 		this.x = x;
@@ -24,8 +29,12 @@ class Tower {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
 		ctx.translate(this.x, this.y);
-		ctx.rotate(this.rotation);
-		ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
+		ctx.rotate(this.rotation-Math.PI/2);
+		if(this.type == 1)
+		ctx.drawImage(tower1img, -16,-16, 32, 32);
+		if(this.type == 2)
+		ctx.drawImage(tower2img, -16,-16, 32, 32);
+		//ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
 		ctx.restore();
 	}
 	// Removes health from the tower
@@ -71,8 +80,15 @@ class Tower {
 		var dx = this.x-enemy.x;
 		var dy = this.y-enemy.y;
 		this.rotation = Math.atan(dy/dx);
+		if(dx<0)
+		this.rotation += Math.PI;
+
+		ctx.strokeStyle = this.laserColor;
 		ctx.beginPath();
-		ctx.moveTo(this.x + this.width / 2, this.y + this.height / 2);
+		ctx.moveTo(this.x, this.y);
+		ctx.lineTo(enemy.x, enemy.y);
+
+		/*ctx.moveTo(this.x + this.width / 2, this.y + this.height / 2);
 		ctx.lineTo(enemy.x, enemy.y);
 		ctx.moveTo(this.x + this.width / 3, this.y + this.height / 3);
 		ctx.lineTo(enemy.x, enemy.y);
@@ -81,9 +97,10 @@ class Tower {
 		ctx.moveTo(this.x + this.width / 5, this.y + this.height / 5);
 		ctx.lineTo(enemy.x, enemy.y);
 		ctx.moveTo(this.x + this.width / 6, this.y + this.height / 6);
-		ctx.lineTo(enemy.x, enemy.y);
-		ctx.strokeStyle = this.laserColor;
+		ctx.lineTo(enemy.x, enemy.y);*/
+		//ctx.strokeStyle = this.laserColor;
 		ctx.stroke();
+		
 
 		enemy.damage(this.power);
 	}
@@ -95,10 +112,16 @@ function buildTower(pos) {
 	switch (towerType) {
 		// TODO decide on tower types
 		case 1:
-			tower = new Tower(10, 1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
+			tower = new Tower(1, 30, 1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
 			break; 
 		case 2:
-			tower = new Tower(20, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
+			tower = new Tower(1, 80, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 200, 7);
+			break;
+		case 3:
+			tower = new Tower(1, 200, 1, pos.x, pos.y, 'pink', 'pink', 100, 10, 10, 200, 40);
+			break;
+		case 4:
+			tower = new Tower(1, 400, 1, pos.x, pos.y, 'cyan', 'cyan', 100, 10, 10, 400, 30);
 			break;
 		default:
 			console.log("invalid tower type");
@@ -119,6 +142,12 @@ function chooseTowerType(num){
 			break;
 		case 2:
 			towerRange = 200;
+			break;
+		case 3:
+			towerRange = 200;
+			break;
+		case 4:
+			towerRange = 400;
 			break;
 		default: 
 			towerRange = 100;
