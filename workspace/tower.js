@@ -122,18 +122,18 @@ function buildTower(pos) {
 			tower = new Tower(1, 30, 1, pos.x, pos.y, 'red', 'red', 100, 10, 10, 100, 5);	
 			break; 
 		case 2:
-			tower = new Tower(2, 80, 1, pos.x, pos.y, 'yellow', 'yellow', 100, 10, 10, 200, 7);
+			tower = new Tower(2, 100, 1, pos.x, pos.y, 'yellow', 'yellow', 100, 10, 10, 200, 7);
 			break;
 		case 3:
-			tower = new Tower(3, 200, 1, pos.x, pos.y, 'green', 'green', 100, 10, 10, 200, 40);
+			tower = new Tower(3, 400, 1, pos.x, pos.y, 'green', 'green', 100, 10, 10, 200, 10);
 			break;
 		case 4:
-			tower = new Tower(4, 400, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 400, 30);
+			tower = new Tower(4, 1000, 1, pos.x, pos.y, 'blue', 'blue', 100, 10, 10, 400, 30);
 			break;
 		default:
 			console.log("invalid tower type");
 	}
-	if (currentMoney > tower.price) {
+	if (currentMoney >= tower.price) {
 		currentMoney -= tower.price;
 		towers.push(tower);
 	}
