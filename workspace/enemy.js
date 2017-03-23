@@ -87,14 +87,14 @@ function createEnemy() {
 	// gets smaller as they get stronger, to a minimum of 5. Max is 100.
 	var enemyRadius = 10; // maybe make a bigger/harder boss?
 	// they get faster too
-	var enemyVelocity = 2 + ( enemiesKilled / 50 );
-	if ( enemyVelocity > 30 ) {
-		enemyVelocity = 30;
+	var enemyVelocity = 2 + ( enemiesKilled / 90 );
+	if ( enemyVelocity > 20 ) {
+		enemyVelocity = 20;
 	}
 	// reward gets bigger
 	var enemyReward = Math.floor(5 + ( enemiesKilled / 50 ));
 	// they get stronger
-	var enemyHealth = 300 + ( enemiesKilled / 3 );
+	var enemyHealth = 300 + ( enemiesKilled / 2 );
 	maxHealth = enemyHealth;
 	//constructor(team, x, y, v, color, health, reward, radius) {
 	var enemyColor = 'green';

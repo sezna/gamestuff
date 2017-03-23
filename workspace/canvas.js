@@ -11,14 +11,20 @@ var currentMoney = 100;
 var currentHealth = 20;
 var currentWave = 0;
 var cursorPosition = null;
-
-setInterval(advance, 50);
+var paused = false;
+setInterval(advance, 40);
 
 // Listen for mouse click all the time
 canvas.addEventListener("click", getTowerPos,false);
 
+function pause() {
+	paused = !paused;
+}
+
+
 // Main function for game logic
 function advance() {
+	if ( !paused ) {
 	drawGame();
 	if(gameOver == false){
 		// Check for dead enemies
@@ -64,9 +70,10 @@ function advance() {
 		}
 	
 		// Spawn new enemies.
-		if (Math.random() < .1 + ( enemiesKilled * .0001)) {
+		if (Math.random() < .1 + ( enemiesKilled * .00015)) {
 			createEnemy();
 		}
+	}
 	}
 }
 // Main function for drawing game logic
