@@ -7,7 +7,7 @@ var gameOver = false;
 //ctx.fillRect(0, 580, 640, 60);
 // Setting up stats
 var maxHealth = 1;
-var currentMoney = 100000;
+var currentMoney = 100;
 var currentHealth = 1;
 var currentWave = 0;
 var cursorPosition = null;
@@ -105,27 +105,52 @@ function drawGame() {
 		if(gameOver == false){
 			canvas.removeEventListener("click", getTowerPos,false);
 			canvas.addEventListener("click", reset,false);
-		}
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
+			gameOver = true;
+			let xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("POST","updateTable.php",true);
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ 	 		xmlhttp.send("score=" + enemiesKilled);
+	    	
+  		}
+  		//alert("Updating Table");
+  		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.font = "30px Arial";
-		ctx.fillText("Press Space to Restart",canvas.width/2,canvas.height/2);
-		//
+		ctx.fillText("Click to Restart",canvas.width/2,canvas.height/2);
+ 	 	console.log(enemiesKilled);
 	}
-}
+		
+	}
+		
+		//
+
+
 
 
 function reset(evt){
 	canvas.addEventListener("click", getTowerPos,false);
 	canvas.removeEventListener("click", reset,false);
+	LoadTable();
 	gameOver = false;
 	currentMoney = 100;
-	currentHealth = maxHealth;
+	currentHealth = 20;
 	currentWave = 0;
+	enemiesKilled = 0;
+	money  =0;
 	enemies = [];
 	towers = [];
 
 
 }
+
+// function LoadTable(scr){
+// 		let xmlhttp = new XMLHttpRequest();
+
+// 		xmlhttp.onreadystatechange=function() {	}
+
+//   		xmlhttp.open("POST","tableGen.php");
+//  	 	xmlhttp.send();
+// 	}
+
 
 //ctx.fillRect(0, 0, 640, 640);
 function getTowerPos(evt){

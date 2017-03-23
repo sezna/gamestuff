@@ -11,7 +11,7 @@ window.onload = function() {LoadTable();};
 	    	}
 	    	
   		}
-
+  		//alert("Generating a table just for you");
   		xmlhttp.open("GET","tableGen.php");
  	 	xmlhttp.send();
 	}
