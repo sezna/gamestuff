@@ -28,15 +28,16 @@ var firstPoint = {
 	direction: turningPoints[0].direction
 };
 turningPoints.splice(0,0,firstPoint);
-// Directions: 12-Up, 6-Down, 9-Left, 3-Right
-// Give Left/Right Directions for Every Other Point
-for(var i = 1; i < turningPoints.length-1; ++i){
-	if(turningPoints[i-1].direction == 6){
-		if(turningPoints[i+1].x -turningPoints[i].x > 0){
-			turningPoints[i].direction = 3;
-		} else{
-			turningPoints[i].direction = 9;
-		}
+for(let i = 1; i < turningPoints.length-1; i+=2){
+	let middlePoint = {
+		x: turningPoints[i+1].x,
+		y: turningPoints[i].y,
+		direction: 6
+	};
+	if(turningPoints[i+1].x -turningPoints[i].x > 0){
+		turningPoints[i].direction = 3;
+	} else{
+		turningPoints[i].direction = 9;
 	}
+	turningPoints.splice(i+1,0,middlePoint);
 }
-	
