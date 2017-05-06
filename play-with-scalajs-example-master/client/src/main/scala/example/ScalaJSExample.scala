@@ -11,6 +11,7 @@ import scala.scalajs.js.annotation.JSExportTopLevel
 object ScalaJSExample extends js.JSApp {
    def main(): Unit = {
     println("Set up polling")
+    shoutOut();
     scalajs.js.timers.setInterval(500)(pollList())
     /*jQuery("#button").click((event: Any) => {
       drawRandom()
