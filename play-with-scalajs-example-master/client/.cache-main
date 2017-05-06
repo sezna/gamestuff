@@ -1,0 +1,94 @@
+format version: 5
+output mode:
+1 items
+0 -> multiple
+output directories:
+1 items
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala -> /users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/bin
+compile options:
+10 items
+0 -> -javabootclasspath
+1 -> /usr/java/jdk1.8.0_102/jre/lib/resources.jar:/usr/java/jdk1.8.0_102/jre/lib/rt.jar:/usr/java/jdk1.8.0_102/jre/lib/jsse.jar:/usr/java/jdk1.8.0_102/jre/lib/jce.jar:/usr/java/jdk1.8.0_102/jre/lib/charsets.jar:/usr/java/jdk1.8.0_102/jre/lib/jfr.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/nashorn.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/sunjce_provider.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/sunec.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/dnsns.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/sunpkcs11.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/zipfs.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/localedata.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/jaccess.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/cldrdata.jar:/usr/java/jdk1.8.0_102/jre/lib/ext/jfxrt.jar
+2 -> -javaextdirs
+3 ->  
+4 -> -bootclasspath
+5 -> /usr/local/eclipse/plugins/org.scala-lang.scala-library_2.11.8.v20160304-115712-1706a37eb8.jar
+6 -> -P:scalajs:mapSourceURI:file:/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/->f68dc6fbd0a45075d8fe/
+7 -> -Xplugin:/users/jyang/.ivy2/cache/org.scala-js/scalajs-compiler_2.11.8/jars/scalajs-compiler_2.11.8-0.6.15.jar
+8 -> -encoding
+9 -> UTF-8
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.11.8
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> false
+products:
+3 items
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> /users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/bin/example/ScalaJSExample$$anonfun$main$1.class
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> /users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/bin/example/ScalaJSExample$.class
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> /users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/bin/example/ScalaJSExample.class
+binary dependencies:
+3 items
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> /users/jyang/.ivy2/cache/org.scala-js/scalajs-library_2.11/jars/scalajs-library_2.11-0.6.15.jar
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> /usr/java/jdk1.8.0_102/jre/lib/rt.jar
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> /usr/local/eclipse/plugins/org.scala-lang.scala-library_2.11.8.v20160304-115712-1706a37eb8.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+3 items
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> example.ScalaJSExample
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> example.ScalaJSExample$
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> example.ScalaJSExample$$anonfun$main$1
+used names:
+0 items
+product stamps:
+3 items
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/bin/example/ScalaJSExample$$anonfun$main$1.class -> lastModified(1494106566000)
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/bin/example/ScalaJSExample$.class -> lastModified(1494106566000)
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/bin/example/ScalaJSExample.class -> lastModified(1494106566000)
+source stamps:
+1 items
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> hash(1def6315bb7b96b94f73b134467107ee33e129b6)
+binary stamps:
+3 items
+/users/jyang/.ivy2/cache/org.scala-js/scalajs-library_2.11/jars/scalajs-library_2.11-0.6.15.jar -> lastModified(1490005375000)
+/usr/java/jdk1.8.0_102/jre/lib/rt.jar -> lastModified(1470858320000)
+/usr/local/eclipse/plugins/org.scala-lang.scala-library_2.11.8.v20160304-115712-1706a37eb8.jar -> lastModified(1465496479000)
+class names:
+3 items
+/users/jyang/.ivy2/cache/org.scala-js/scalajs-library_2.11/jars/scalajs-library_2.11-0.6.15.jar -> scala.scalajs.js.JSApp
+/usr/java/jdk1.8.0_102/jre/lib/rt.jar -> java.lang.Object
+/usr/local/eclipse/plugins/org.scala-lang.scala-library_2.11.8.v20160304-115712-1706a37eb8.jar -> scala.Unit
+internal apis:
+1 items
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHAdLZFKAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAAHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+ABV4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAWZXhhbXBsZS5TY2FsYUpTRXhhbXBsZXVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABk1vZHVsZXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgATeHNidGkuU2FmZUxhenkkSW1wbDuRTxH0RUzJAgADWgAIYml0bWFwJDBMAAJfdHQAEkxqYXZhL2xhbmcvT2JqZWN0O0wABGV2YWx0ABFMc2NhbGEvRnVuY3Rpb24wO3hyABZ4c2J0aS5hcGkuQWJzdHJhY3RMYXp503e1AV+756ACAAB4cABwc3IAIHhzYnRpLlNhZmVMYXp5JCRhbm9uZnVuJHN0cmljdCQxAAAAAAAAAAACAAFMAAd2YWx1ZSQxcQB+AC94cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AC4AcHNxAH4AM3NyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgAVTAAJaW5oZXJpdGVkcQB+ABVMAAdwYXJlbnRzcQB+ABV4cQB+ADdzcQB+AC4AcHNxAH4AM3VxAH4AEAAAAABzcQB+AC4AcHNxAH4AM3VxAH4AEAAAAABzcQB+AC4AcHNxAH4AM3VyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAADc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgAcTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4ANnQABUpTQXBwc3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgA2c3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAAEc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4AHHhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNxAH4AU3QAB3NjYWxhanNzcQB+AFN0AAJqc3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgBUc3EAfgBHdAAGT2JqZWN0c3EAfgBLc3EAfgBOdXEAfgBRAAAAA3NxAH4AU3QABGphdmFzcQB+AFN0AARsYW5ncQB+AFxzcQB+AEd0AANBbnlzcQB+AEtzcQB+AE51cQB+AFEAAAACc3EAfgBTcQB+AFZxAH4AXHVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+ABx4cHQAB2V4YW1wbGVzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVvfsO8QdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgAcTAAPc291cmNlRGlyZWN0b3J5cQB+ABx4cHQAXy91c2Vycy9qeWFuZy9Mb2NhbC9IVE1MLURvY3VtZW50cy9XZWJBcHBzL2dhbWVzdHVmZi9wbGF5LXdpdGgtc2NhbGFqcy1leGFtcGxlLW1hc3Rlci9jbGllbnQvYmludABqL3VzZXJzL2p5YW5nL0xvY2FsL0hUTUwtRG9jdW1lbnRzL1dlYkFwcHMvZ2FtZXN0dWZmL3BsYXktd2l0aC1zY2FsYWpzLWV4YW1wbGUtbWFzdGVyL2NsaWVudC9zcmMvbWFpbi9zY2FsYXVyAAJbQqzzF/gGCFTgAgAAeHAAAAAUHe9jFbt7lrlPc7E0RnEH7jPhKbY=
+external apis:
+0 items
+source infos:
+1 items
+/users/jyang/Local/HTML-Documents/WebApps/gamestuff/play-with-scalajs-example-master/client/src/main/scala/example/ScalaJSExample.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABW9+w7xB1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAXy91c2Vycy9qeWFuZy9Mb2NhbC9IVE1MLURvY3VtZW50cy9XZWJBcHBzL2dhbWVzdHVmZi9wbGF5LXdpdGgtc2NhbGFqcy1leGFtcGxlLW1hc3Rlci9jbGllbnQvYmludABqL3VzZXJzL2p5YW5nL0xvY2FsL0hUTUwtRG9jdW1lbnRzL1dlYkFwcHMvZ2FtZXN0dWZmL3BsYXktd2l0aC1zY2FsYWpzLWV4YW1wbGUtbWFzdGVyL2NsaWVudC9zcmMvbWFpbi9zY2FsYQ==
