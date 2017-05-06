@@ -1,0 +1,11 @@
+
+@* studentReg Template File *@
+@()
+
+@main("Who are you?") {
+	<h2>Tell us who you are.</h2>
+	<form method="GET" action="@routes.Application.studentRegistration">
+		Name:<input type="text" name = "name"></input>
+		<input type="submit"></input>
+	</form>
+}
