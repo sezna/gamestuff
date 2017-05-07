@@ -1,0 +1,16 @@
+[0m[[0minfo[0m] [0mFast optimizing /users/shough/WebApps/game/gamestuff/target/scala-2.12/example-fastopt.js[0m
+[0m[[0mdebug[0m] [0mLinker: Compute reachability: 79969 us[0m
+[0m[[0mdebug[0m] [0mLinker: Assemble LinkedClasses: 170296 us[0m
+[0m[[0mdebug[0m] [0mBasic Linking: 260376 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Batch mode: true[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Incremental part: 143419 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizing 867 methods.[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizer part: 168340 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: 321361 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Compute reachability: 29512 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Assemble LinkedClasses: 5935 us[0m
+[0m[[0mdebug[0m] [0mRefiner: 36966 us[0m
+[0m[[0mdebug[0m] [0mEmitter: Class tree cache stats: reused: 35 -- invalidated: 41[0m
+[0m[[0mdebug[0m] [0mEmitter: Method tree cache stats: resued: 0 -- invalidated: 104[0m
+[0m[[0mdebug[0m] [0mEmitter (write output): 108671 us[0m
+[0m[[0mdebug[0m] [0mGlobal IR cache stats: reused: 0 -- invalidated: 7 -- trees read: 259[0m

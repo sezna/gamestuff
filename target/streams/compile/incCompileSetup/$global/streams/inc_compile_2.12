@@ -1,0 +1,138 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /users/shough/WebApps/game/gamestuff/target/scala-2.12/classes
+compile options:
+1 items
+0 -> -Xplugin:/users/shough/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.1/jars/scalajs-compiler_2.12.1-0.6.15.jar
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.12.1
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+5 items
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/ElementExt.class
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/EventName$.class
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/EventName.class
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/ScalaJSExample$.class
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/ScalaJSExample.class
+binary dependencies:
+4 items
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /users/shough/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.1.jar
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /users/shough/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.15.jar
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /users/shough/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> /usr/java/jdk1.8.0_102/jre/lib/rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+5 items
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> example.ElementExt
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> example.EventName
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> example.EventName$
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> example.ScalaJSExample
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> example.ScalaJSExample$
+used names:
+44 items
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> *
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> <init>
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> <refinement>
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Any
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> AnyRef
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Document
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Element
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> ElementExt
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Event
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> EventName
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> EventType
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Function1
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Int
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> JSApp
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> JSExport
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> MouseEvent
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Node
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Nothing
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Object
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Predef
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> ScalaJSExample
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> String
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> T
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> T0
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> Unit
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> annotation
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> appendChild
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> apply
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> asInstanceOf
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> createElement
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> document
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> dom
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> example
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> getElementById
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> innerHTML_=
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> js
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> name
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> onmousedown
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> org
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> package
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> paragraph
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> scala
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> scalajs
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> x
+product stamps:
+5 items
+/users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/ElementExt.class -> lastModified(1494122506000)
+/users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/EventName$.class -> lastModified(1494122506000)
+/users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/EventName.class -> lastModified(1494122506000)
+/users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/ScalaJSExample$.class -> lastModified(1494122506000)
+/users/shough/WebApps/game/gamestuff/target/scala-2.12/classes/example/ScalaJSExample.class -> lastModified(1494122506000)
+source stamps:
+1 items
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> hash(23f20697be026a78b1bc3eaefa36350063a52b8b)
+binary stamps:
+4 items
+/users/shough/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.1.jar -> lastModified(1477728070000)
+/users/shough/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.15.jar -> lastModified(1490005682000)
+/users/shough/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar -> lastModified(1480936165000)
+/usr/java/jdk1.8.0_102/jre/lib/rt.jar -> lastModified(1470858320000)
+class names:
+4 items
+/users/shough/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.1.jar -> org.scalajs.dom.package$
+/users/shough/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.15.jar -> scala.scalajs.js.Object
+/users/shough/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar -> scala.Predef$
+/usr/java/jdk1.8.0_102/jre/lib/rt.jar -> java.lang.Object
+internal apis:
+1 items
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwtdbxQwAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAic3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hw71kvA3QABm5vdGlmeXNxAH4ADLYv0Gx0ABBhZGRFdmVudExpc3RlbmVyc3EAfgAMFDnTBXQADmhhc093blByb3BlcnR5c3EAfgAMxpOTy3QABHdhaXRzcQB+AAxxMrCVdAAUcHJvcGVydHlJc0VudW1lcmFibGVzcQB+AAxp7xjDdAANJGFzSW5zdGFuY2VPZnNxAH4ADJdOfLB0AAd2YWx1ZU9mc3EAfgAMvwh9IXQABmVxdWFsc3NxAH4ADM6K6pJ0AA5TY2FsYUpTRXhhbXBsZXNxAH4ADOj8uFl0AAxhc0luc3RhbmNlT2ZzcQB+AAxcQqM5dAAMc3luY2hyb25pemVkc3EAfgAM46hY4nQADnRvTG9jYWxlU3RyaW5nc3EAfgAMEAkqYXQADSRpc0luc3RhbmNlT2ZzcQB+AAzoTclWdAAJRXZlbnRUeXBlc3EAfgAMDmNAa3QABG1haW5zcQB+AAyJM5LedAAJbm90aWZ5QWxsc3EAfgAMdbn/23QABnNxdWFyZXNxAH4ADGuCfeB0AAxpc0luc3RhbmNlT2ZzcQB+AAwfu07+dAALb25tb3VzZWRvd25zcQB+AAzNq6EDdAAFYXBwbHlzcQB+AAwCM+H0dAACPT1zcQB+AAxSLCoLdAAKRWxlbWVudEV4dHNxAH4ADJtC9FV0AAVjbG9uZXNxAH4ADKdSRDJ0AA1pc1Byb3RvdHlwZU9mc3EAfgAMsG69wXQACHRvU3RyaW5nc3EAfgAMMhhIJnQAAiE9c3EAfgAMHMWQjXQACGdldENsYXNzc3EAfgAMsAongnQAAm5lc3EAfgAM5glH8XQAAmVxc3EAfgAMhpK5RnQAFiRqcyRleHBvcnRlZCRtZXRoJG1haW5zcQB+AAxWQ0HHdAACIyNzcQB+AAzQs0pKdAAJRXZlbnROYW1lc3EAfgAMqwUDQnQACGZpbmFsaXplc3EAfgAMR7GSc3QACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAABHNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AW3hyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAnNyABR4c2J0aS5hcGkuQW5ub3RhdGlvbt4OgaL2XAqyAgACWwAJYXJndW1lbnRzdAAfW0x4c2J0aS9hcGkvQW5ub3RhdGlvbkFyZ3VtZW50O0wABGJhc2V0ABBMeHNidGkvYXBpL1R5cGU7eHB1cgAfW0x4c2J0aS5hcGkuQW5ub3RhdGlvbkFyZ3VtZW50O1Gdpo84JQ94AgAAeHAAAAABc3IAHHhzYnRpLmFwaS5Bbm5vdGF0aW9uQXJndW1lbnTWRbHYAxsXfAIAAkwABG5hbWVxAH4ADUwABXZhbHVlcQB+AA14cHQAAHQAAigpc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHQACVJhd0pTVHlwZXNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4AdHNyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAABXNyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AA14cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAFc2NhbGFzcQB+AIB0AAdzY2FsYWpzc3EAfgCAdAACanNzcQB+AIB0AAphbm5vdGF0aW9uc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AIFzcQB+AGh1cQB+AGwAAAABc3E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xAH4AyXEAfgCLc3EAfgBycQB+AMFzcQB+AHhzcQB+AHt1cQB+AH4AAAACc3EAfgCAcQB+AINxAH4Ai3VyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQAB2V4YW1wbGVzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVvgpAR/dXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQAPi91c2Vycy9zaG91Z2gvV2ViQXBwcy9nYW1lL2dhbWVzdHVmZi90YXJnZXQvc2NhbGEtMi4xMi9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUI/IGl74CanixvD6u+jY1AGOlK4s=
+external apis:
+0 items
+source infos:
+1 items
+/users/shough/WebApps/game/gamestuff/src/main/scala/example/ScalaJSExample.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABW+CkBH91cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAPi91c2Vycy9zaG91Z2gvV2ViQXBwcy9nYW1lL2dhbWVzdHVmZi90YXJnZXQvc2NhbGEtMi4xMi9jbGFzc2VzdAABLw==
