@@ -35,7 +35,11 @@ class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: D
   
   var username = ""
   
-  
+  def goGameTest = Action{
+    Ok(views.html.game2)
+  } 
+
+
   def index = Action {
     Ok(views.html.index(userForm))
   }
