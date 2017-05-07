@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSExportTopLevel
 import scala.scalajs.js
 import scala.collection.mutable.ArrayBuffer
 
-class Tower (team:Int, kind:Int, x:Double, y:Double)   {
+class Tower (var team:Int, var kind:Int, var x:Double, var y:Double)   {
   var (price, color, range, power) = 
     kind match {
       case 1  => (30, "red", 100, 5) 
@@ -27,5 +27,17 @@ class Tower (team:Int, kind:Int, x:Double, y:Double)   {
     // var image = dom.document.createElement("img").asInstanceOf[html.Image];
     //  image.src = "/src/main/scala/firstproj/target/tower1.gif";
     //  ctx.drawImage(image, 200,300, 32, 32);
+  }
+
+  def shoot(e:Enemy,ctx: CanvasRenderingContext2D){
+     var dx = this.x - e.x;
+     var dy = this.y - e.y;
+     ctx.strokeStyle = this.color;
+     ctx.beginPath();
+     ctx.moveTo(this.x, this.y);
+     ctx.lineTo(e.x, e.y);
+     ctx.closePath();
+
+     ctx.stroke();
   }
 }

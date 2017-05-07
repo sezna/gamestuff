@@ -21,15 +21,17 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
   }
 
   var alive = true;
-  var maxHealth = 200;
+  var maxHealth = 255;
+  health = maxHealth;
   var enemiesKilled = 0;
 
   def draw(ctx: CanvasRenderingContext2D){
     ctx.beginPath();
-    ctx.fillStyle = "blue";
-    ctx.fillStyle = "#00"+(Math.floor((this.health/maxHealth)*255)).toString()+"00";
-    //ctx.arc(this.x,this.y,this.radius,0,2*Math.PI,false);
-    ctx.fillRect(x,y,radius,radius);
+    ctx.fillStyle = "#000000";
+    //ctx.fillStyle = "#00"+(Math.floor((this.health/maxHealth)*255))+"00";
+	ctx.fillStyle = "#"+ this.health.toHexString+"0000";
+    ctx.arc(this.x,this.y,this.radius,0,2*Math.PI,false);
+    //ctx.fillRect(x,y,radius,radius);
     ctx.fill();
     ctx.closePath();
     print("Drawn");
