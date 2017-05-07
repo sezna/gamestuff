@@ -53,15 +53,15 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
 
     var firstPoint = new pathSegment(tp(0).x,tp(0).y,tp(0).direction);
     tp.insert(0,firstPoint);
-
-    for(var i = 1; i < tp.length-1; i+=2){
+    var i = 0;
+    for( i <-1 until tp.length-1 by 2){
       var midPoint = new pathSegment(tp(i+1).x,tp(i).y,6);
       if(tp(i+1).x-tp(i).x > 0){
         tp(i).direction = 3;
       } else{
         tp(i).direction = 9;
       }
-      tp.inset(i+1,midPoint);
+      tp.insert(i+1,midPoint);
     }
 
 
