@@ -9,30 +9,38 @@ import scala.scalajs.js.annotation.JSExportTopLevel
 import scala.scalajs.js
 import scala.collection.mutable.ArrayBuffer
 object Towerz extends JSApp {
-  def main() { 
-    var body = document.getElementById("body").asInstanceOf[html.Body];
-    var canvas = document.createElement("canvas").asInstanceOf[html.Canvas];
-    var ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D];
-    var towers = scala.collection.mutable.ArrayBuffer.empty[Tower];
+   
+    var body = document.getElementById("body").asInstanceOf[html.Body]
+    var canvas = document.createElement("canvas").asInstanceOf[html.Canvas]
+    var ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+    var towers = scala.collection.mutable.ArrayBuffer.empty[Tower]
     var enemies = scala.collection.mutable.ArrayBuffer.empty[Enemy]
-    body.appendChild(canvas);
+	var e = new Enemy(1,1,1,1,"a",1,1,1,null)
+
+    body.appendChild(canvas)
     canvas.width = 640;
     canvas.height = 640;
     canvas.onmousedown = {
       (e: dom.MouseEvent) =>
         val rect = canvas.getBoundingClientRect()
-        towers.append( new Tower(1,3,e.clientX - rect.left,e.clientY - rect.top));
+        towers.append( new Tower(1,3,e.clientX - rect.left,e.clientY - rect.top))
     }
-    def main(){
-      dom.window.setInterval(advance _, 50);
+
+def main() {
+    dom.window.setInterval(advance _, 50);
     }
+
     def advance() {
+	print("Advancing")
+	var newEnemy = e.createEnemy()
+	enemies.append(newEnemy)
       enemies.foreach((e: Enemy) => e.move())
 
       // Draw stuff
       towers.foreach((tow: Tower) => tow.display(ctx))
       enemies.foreach((e: Enemy) => e.draw(ctx))
   }
-}
+
+
 } 
 
