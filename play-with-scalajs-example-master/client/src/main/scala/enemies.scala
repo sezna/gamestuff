@@ -47,8 +47,27 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
       tp += thisPoint;
     }
 
+    if(tp.length > 0){
+    	tp.sortBy(t => t.y);
+    }
+
+    var firstPoint = new pathSegment(tp(0).x,tp(0).y,tp(0).direction);
+    tp.insert(0,firstPoint);
+
+    for(var i = 1; i < tp.length-1; i+=2){
+      var midPoint = new pathSegment(tp(i+1).x,tp(i).y,6);
+      if(tp(i+1).x-tp(i).x > 0){
+        tp(i).direction = 3;
+      } else{
+        tp(i).direction = 9;
+      }
+      tp.inset(i+1,midPoint);
+    }
+
 
     return tp;
+
+   
   }
 
   def damage(d:Int){
@@ -105,7 +124,7 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
 
   }
 
-  def createEnemy(){
+  def createEnemy():Enemy = {
 
     var x = turningPoints(0).x
     var enemyRadius = 10;
@@ -121,6 +140,7 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
 
     var enemyColor = "green";
     var enemy = new Enemy(eTeam,x,0,enemyVel,enemyColor,enemyHealth,enemyReward,enemyRadius,turningPoints);
+    return enemy;
     //enemies.push(enemy);
   }
 
