@@ -1,0 +1,23 @@
+@* game Template File *@
+@(username: String, data: Seq[Tables.UsersRow])(implicit messages: Messages)
+
+@main("Another Name"){
+	<h3>Let's pretend that I am a game page:)</h3>
+
+	<p>Data for @username.</p>
+
+	<table border="1">
+		<tr><th>Username</th><th>Highscore1</th><th>Highscore2</th><th>Highscore3</th><th>Wins</th><th>Losses</th></tr>
+		@for(d <- data) {
+			<tr>
+			<td>@d.username</td>
+			<td>@d.highscore1</td>
+			<td>@d.highscore2</td>
+			<td>@d.highscore3</td>
+			<td>@d.wins</td>
+			<td>@d.losses</td>
+			</tr>
+		}
+	</table>
+
+}

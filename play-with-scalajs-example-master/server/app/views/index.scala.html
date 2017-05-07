@@ -1,9 +1,17 @@
-@(message: String)
+@(userform: Form[UserData])(implicit messages: Messages)
 
-@main("Play with Scala.js") {
-<h2>Play and Scala.js share a same message</h2>
-<ul>
-  <li>Play shouts out: <em>@message</em></li>
-  <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
-</ul>
+
+@main("A Name"){
+	@helper.form(action=routes.UserController.setUser){
+		@helper.inputText(userform("name"))
+		@helper.inputPassword(userform("password"))
+		<button type="submit">Get Table</button>
+	}
+	<p>Not a member? Sign up here</p>
+	@helper.form(action=routes.UserController.addUser){
+		@helper.inputText(userform("name"))
+		@helper.inputPassword(userform("password"))
+		<button type="submit">Sign Up and Sign in!</button>
+	}
+
 }

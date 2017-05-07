@@ -7,7 +7,8 @@ import models._
 class Application extends Controller {
 
   def index = Action {
-    Ok(views.html.index(SharedMessages.itWorks))
+    //Ok(views.html.index(SharedMessages.itWorks))
+    Ok("It works!")
   }
   
   def studentRegistration() = Action {
