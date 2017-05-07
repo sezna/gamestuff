@@ -13,6 +13,7 @@ object Towerz extends JSApp {
     var canvas = document.createElement("canvas").asInstanceOf[html.Canvas];
     var ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D];
     var towers = scala.collection.mutable.ArrayBuffer.empty[Tower];
+    var enemies = scala.collection.mutable.ArrayBuffer.empty[Enemy]
     body.appendChild(canvas);
     canvas.width = 640;
     canvas.height = 640;
