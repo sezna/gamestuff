@@ -2,10 +2,12 @@
 @(username: String, data: Seq[Tables.UsersRow])(implicit messages: Messages)
 
 @main("Another Name"){
-	<p>Data for @username.</p>
+	<p id = "usernameP">@username</p>
 
 	
-	
+	@helper.form(action=routes.UserController.updateStats){
+		<button type="submit">Update the stats</button>
+	}
 	
 	<center><h3>This is now a game.</h3>
 	<body id = "body"> 
