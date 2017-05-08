@@ -65,6 +65,7 @@ object Towerz extends JSApp {
 
 	@JSExportTopLevel("harder")
 	def harder() {
+						enemies.append(e.createEnemy)
 						enemies.foreach((e: Enemy) => {
 											e.v += 1
 											e.health = e.health * 2
@@ -91,6 +92,7 @@ def chooseTowerType(kind:Int) {
 		currentTowerType = kind
 		
 	}
+var displayScores = false;
 
 def main() {
     dom.window.setInterval(advance _, 50);
@@ -111,8 +113,11 @@ gradient.addColorStop(1.0,"red");
 // Fill with gradient
 ctx.fillStyle=gradient;
 ctx.fillText("GAME OVER",205,330);
-var scoresDiv = document.getElementById("updateForm")
+if ( ! displayScores ) {
+				var scoresDiv = document.getElementById("updateForm")
 	scoresDiv.innerHTML = """<form action= "@routes.UserController.updateStats(""" + score + """)" method= "POST"><input type="submit" value="Update the stats"></form>"""
+	displayScores = true;
+}
 	}
 
 	if(!paused) {

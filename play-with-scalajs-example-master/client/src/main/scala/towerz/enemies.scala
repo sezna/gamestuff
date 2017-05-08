@@ -38,7 +38,7 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
 
   def draw(ctx: CanvasRenderingContext2D){
     ctx.beginPath();
-		val percentageOfHealth = math.floor((this.health / this.maxHealth) * 250).toInt
+		val percentageOfHealth = ((this.health / this.maxHealth) * 250).toInt
     ctx.fillStyle = makeHexColor(percentageOfHealth)
 
 		g.console.log(makeHexColor(percentageOfHealth));
