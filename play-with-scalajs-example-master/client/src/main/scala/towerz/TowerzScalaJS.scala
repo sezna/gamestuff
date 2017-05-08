@@ -63,6 +63,16 @@ object Towerz extends JSApp {
     }
 
 
+	@JSExportTopLevel("harder")
+	def harder() {
+						enemies.foreach((e: Enemy) => {
+											e.v += 1
+											e.health = e.health * 2
+											e.radius += 4
+											e.reward = e.reward * 2
+										}
+					)
+					}
 	var currentTowerType = 1;
 
 //var button1 = document.createElement("button").asInstanceOf[html.Button]
