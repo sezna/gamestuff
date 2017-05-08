@@ -38,12 +38,26 @@ object Towerz extends JSApp {
     canvas.width = 640;
     canvas.height = 640;
     canvas.onmousedown = {
+
       (e: dom.MouseEvent) =>
         val rect = canvas.getBoundingClientRect()
 	var newTow =  new Tower(1,currentTowerType,e.clientX - rect.left,e.clientY - rect.top);
+
+	var data1 = ctx.getImageData(newTow.x-15, newTow.y-15, 1, 1).data;
+	var data2 = ctx.getImageData(newTow.x-15, newTow.y+15, 1, 1).data;
+	var data3 = ctx.getImageData(newTow.x+15, newTow.y-15, 1, 1).data;
+	var data4 = ctx.getImageData(newTow.x+15, newTow.y+15, 1, 1).data;
+
+	if(data1(0) == 51 && data1(1) == 153 && data1(2) == 102 &&
+	   data2(0) == 51 && data2(1) == 153 && data2(2) == 102 &&
+	   data3(0) == 51 && data3(1) == 153 && data3(2) == 102 &&
+	   data4(0) == 51 && data4(1) == 153 && data4(2) == 102)  {
+
 	if(newTow.price <= euros){
 		        towers.append(newTow);
 		euros -= newTow.price;
+	}
+
 	}
 
     }
@@ -85,7 +99,7 @@ gradient.addColorStop(0.5,"blue");
 gradient.addColorStop(1.0,"red");
 // Fill with gradient
 ctx.fillStyle=gradient;
-ctx.fillText("GAME OVER",205,335);
+ctx.fillText("GAME OVER",205,330);
 	}
 
 	if(!paused) {
@@ -172,11 +186,12 @@ ctx.fillText("GAME OVER",205,335);
 
 		 ctx.lineWidth = 1;
 
-      towers.foreach((tow: Tower) => tow.display(ctx))
       
       enemies.foreach((e: Enemy) => e.draw(ctx))
 
 	towers.foreach((tow: Tower) => shootHighestPriorityEnemy(tow))
+
+      towers.foreach((tow: Tower) => tow.display(ctx))
 	}
   }
 
