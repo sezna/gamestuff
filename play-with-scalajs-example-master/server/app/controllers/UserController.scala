@@ -82,5 +82,11 @@ class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: D
     )
     
   }
+ /* 
+  def updateStats(score: Int) = Action.async{implicit request =>
+    val dataf = dbConfig.db.run(Users.filter(d => d.username === username).result)
+    
+    
+  }*/
   
 }

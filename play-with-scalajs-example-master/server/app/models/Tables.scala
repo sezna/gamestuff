@@ -14,9 +14,32 @@ trait Tables {
   import slick.jdbc.{GetResult => GR}
 
   /** DDL for all tables. Call .create to execute. */
-  lazy val schema: profile.SchemaDescription = Users.schema
+  lazy val schema: profile.SchemaDescription = Games.schema ++ Users.schema
   @deprecated("Use .schema instead of .ddl", "3.0")
   def ddl = schema
+
+  /** Entity class storing rows of table Games
+   *  @param gameid Database column gameID SqlType(INT), AutoInc, PrimaryKey
+   *  @param username Database column username SqlType(VARCHAR), Length(255,true), Default(None) */
+  case class GamesRow(gameid: Int, username: Option[String] = None)
+  /** GetResult implicit for fetching GamesRow objects using plain SQL queries */
+  implicit def GetResultGamesRow(implicit e0: GR[Int], e1: GR[Option[String]]): GR[GamesRow] = GR{
+    prs => import prs._
+    GamesRow.tupled((<<[Int], <<?[String]))
+  }
+  /** Table description of table games. Objects of this class serve as prototypes for rows in queries. */
+  class Games(_tableTag: Tag) extends Table[GamesRow](_tableTag, "games") {
+    def * = (gameid, username) <> (GamesRow.tupled, GamesRow.unapply)
+    /** Maps whole row to an option. Useful for outer joins. */
+    def ? = (Rep.Some(gameid), username).shaped.<>({r=>import r._; _1.map(_=> GamesRow.tupled((_1.get, _2)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
+
+    /** Database column gameID SqlType(INT), AutoInc, PrimaryKey */
+    val gameid: Rep[Int] = column[Int]("gameID", O.AutoInc, O.PrimaryKey)
+    /** Database column username SqlType(VARCHAR), Length(255,true), Default(None) */
+    val username: Rep[Option[String]] = column[Option[String]]("username", O.Length(255,varying=true), O.Default(None))
+  }
+  /** Collection-like TableQuery object for table Games */
+  lazy val Games = new TableQuery(tag => new Games(tag))
 
   /** Entity class storing rows of table Users
    *  @param username Database column username SqlType(VARCHAR), PrimaryKey, Length(50,true)
