@@ -1,6 +1,7 @@
 package firstproj
 
-
+import scala.scalajs.js
+import js.Dynamic.{ global => g }
 import scala.scalajs.js.JSApp
 import org.scalajs.dom
 import org.scalajs.dom.html
@@ -22,13 +23,25 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
 
   var alive = true;
   var maxHealth = health;
-  health = 255;
   var enemiesKilled = 0;
+
+	def makeHexColor(h: Int): String = {
+			var toReturn = h.toHexString
+			while ( toReturn.length < 6 ) {
+								toReturn = "0" + toReturn
+			}
+			if (toReturn.length > 6) {
+							toReturn = toReturn.substring(0, 6)				
+			}
+			return "#" + toReturn
+	}
 
   def draw(ctx: CanvasRenderingContext2D){
     ctx.beginPath();
-    ctx.fillStyle = "#000000";
-    ctx.fillStyle = "#00"+(Math.floor((this.health/maxHealth)*255)%255)+"00";
+		val percentageOfHealth = math.floor((this.health / this.maxHealth) * 250).toInt
+    ctx.fillStyle = makeHexColor(percentageOfHealth)
+
+		g.console.log(makeHexColor(percentageOfHealth));
 	//ctx.fillStyle = "#"+ ((this.health/this.maxHealth)*10040319).toInt.toHexString;
     ctx.arc(this.x,this.y,this.radius,0,2*Math.PI,false);
     //ctx.fillRect(x,y,radius,radius);
