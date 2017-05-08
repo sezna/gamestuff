@@ -25,25 +25,25 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
   var maxHealth = health;
   var enemiesKilled = 0;
 
-	def makeHexColor(h: Int): String = {
-			var toReturn = h.toHexString
-			while ( toReturn.length < 6 ) {
-								toReturn = "0" + toReturn
-			}
-			if (toReturn.length > 6) {
-							toReturn = toReturn.substring(0, 6)				
-			}
-			return "#" + toReturn
-	}
+  def makeHexColor(h: Int): String = {
+    var toReturn = h.toHexString
+    while ( toReturn.length < 6 ) {
+      toReturn = "0" + toReturn
+    }
+    if (toReturn.length > 6) {
+      toReturn = toReturn.substring(0, 6)				
+    }
+    return "#" + toReturn
+  }
 
   def draw(ctx: CanvasRenderingContext2D){
     ctx.beginPath();
-		val percentageOfHealth = ((this.health.toDouble - 1 / this.maxHealth) * 255).toInt
+    val percentageOfHealth = ((this.health.toDouble - 1 / this.maxHealth) * 255).toInt
     ctx.fillStyle = makeHexColor(percentageOfHealth)
-		this.radius = { if (this.health < 6000) { this.health / 1000 } else { 31 } } + ( this.health / this.maxHealth.toFloat  * 5).toInt
-//		g.console.log("health:" + this.health + " maxHealth: " + this.maxHealth + " out of 255: " + percentageOfHealth)
-//		g.console.log(makeHexColor(percentageOfHealth));
-	//ctx.fillStyle = "#"+ ((this.health/this.maxHealth)*10040319).toInt.toHexString;
+    this.radius = { if (this.health < 6000) { this.health / 1000 } else { 31 } } + ( this.health / this.maxHealth.toFloat  * 5).toInt
+    //		g.console.log("health:" + this.health + " maxHealth: " + this.maxHealth + " out of 255: " + percentageOfHealth)
+    //		g.console.log(makeHexColor(percentageOfHealth));
+    //ctx.fillStyle = "#"+ ((this.health/this.maxHealth)*10040319).toInt.toHexString;
     ctx.arc(this.x,this.y,this.radius,0,2*Math.PI,false);
     //ctx.fillRect(x,y,radius,radius);
     ctx.fill();
@@ -51,9 +51,9 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
     print("Drawn");
 
   }
-	def adjustMaxHealth(h: Int) {
-			maxHealth = h
-	}
+  def adjustMaxHealth(h: Int) {
+    maxHealth = h
+  }
 
   def makePath(width: Int, height: Int):ArrayBuffer[pathSegment] = {
     var turningPointNum = 8;
@@ -67,7 +67,7 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
     }
 
     if(tp.length > 0){
-    	tp = tp.sortBy(t => t.y);
+      tp = tp.sortBy(t => t.y);
     }
 
     var firstPoint = new pathSegment(tp(0).x,0,tp(0).direction);
@@ -86,7 +86,7 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
 
     return tp;
 
-   
+
   }
 
   def damage(d:Int){

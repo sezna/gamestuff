@@ -23,18 +23,18 @@ case class UserData(name: String, password: String)
  */
 @Singleton
 class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: DatabaseConfigProvider) extends Controller with I18nSupport {
-  
+
   val dbConfig = dbConfigProvider.get[JdbcProfile]
-  
+
   val userForm = Form(
     mapping(
       "name" -> text,
       "password" -> nonEmptyText
     )(UserData.apply)(UserData.unapply)
   )
-  
+
   var username = ""
-  
+
   def goGameTest = Action{
     Ok(views.html.game2())
   } 
@@ -43,34 +43,34 @@ class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: D
   def index = Action {
     Ok(views.html.index(userForm))
   }
-  
+
   def goGame() = Action.async{ implicit request =>
     // add new ID to the database
     val insertActions = DBIO.seq(Games += GamesRow(-1, Option(username)))
     dbConfig.db.run(insertActions)
     val dataf = dbConfig.db.run(Users.filter(d => d.username === username).result)
     dataf.map(data => Ok(views.html.game(username, data)))
-    
+
   }
-  
-  
+
+
   def setUser() = Action.async { implicit request =>
     userForm.bindFromRequest.fold(
-        formWithErrors => {
-          Future(BadRequest(views.html.index(formWithErrors)))
-        },
-        userData => {
-          val dataf = dbConfig.db.run(Users.filter(d => d.username === userData.name && d.password === userData.password).result)
-          dataf.map(data => {
-            if(data.length == 1) {
-              username = userData.name
-              Redirect("/game")
-            } else{Ok("Invalid Username or Password")}
-          })
-        }
-    )
+      formWithErrors => {
+        Future(BadRequest(views.html.index(formWithErrors)))
+      },
+      userData => {
+        val dataf = dbConfig.db.run(Users.filter(d => d.username === userData.name && d.password === userData.password).result)
+        dataf.map(data => {
+          if(data.length == 1) {
+            username = userData.name
+            Redirect("/game")
+          } else{Ok("Invalid Username or Password")}
+        })
+      }
+      )
   }
-  
+
   def addUser() = Action.async{implicit request =>
     userForm.bindFromRequest.fold(
       formWithErrors => {Future(Ok("Not signed up!"))},
@@ -78,14 +78,14 @@ class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: D
         val insertActions = DBIO.seq(
           Users += UsersRow(userData.name, userData.password)
         )
-        username = userData.name
-        val dataf = dbConfig.db.run(insertActions)
-        dataf.map(data => Redirect("/game"))
+      username = userData.name
+      val dataf = dbConfig.db.run(insertActions)
+      dataf.map(data => Redirect("/game"))
       }
-    )
-    
+      )
+
   }
- 
+
   def updateStats(score: Int) = Action.async{implicit request =>
     //val dataf = dbConfig.db.run(Users.filter(d => d.username === username).result)
     val q1 = for{d <- Users if d.username === username} yield d.highscore1
@@ -101,8 +101,8 @@ class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: D
           dataf.map(inside => Ok("inner"))
         }
       }
-      Redirect("/game")}
-      )
+    Redirect("/game")}
+    )
   }
-  
+
 }
