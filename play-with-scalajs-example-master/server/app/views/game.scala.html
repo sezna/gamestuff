@@ -5,9 +5,9 @@
 	<p id = "usernameP">@username</p>
 
 	
-	@helper.form(action=routes.UserController.updateStats){
-		<button type="submit">Update the stats</button>
-	}
+	
+	
+    <div id = "updateForm"></div>
 	
 	<center><h3>This is now a game.</h3>
 	<body id = "body"> 
@@ -23,13 +23,11 @@
 	<p id = "Stats"></p>
 	
 	<table border="1">
-		<tr><th>Username</th><th>Highscore1</th><th>Highscore2</th><th>Highscore3</th><th>Wins</th><th>Losses</th></tr>
+		<tr><th>Username</th><th>Highscore1</th><th>Wins</th><th>Losses</th></tr>
 		@for(d <- data) {
 			<tr>
 			<td>@d.username</td>
 			<td>@d.highscore1</td>
-			<td>@d.highscore2</td>
-			<td>@d.highscore3</td>
 			<td>@d.wins</td>
 			<td>@d.losses</td>
 			</tr>

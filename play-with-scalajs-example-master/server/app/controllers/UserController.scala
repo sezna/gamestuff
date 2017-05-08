@@ -45,6 +45,9 @@ class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: D
   }
   
   def goGame() = Action.async{ implicit request =>
+    // add new ID to the database
+    val insertActions = DBIO.seq(Games += GamesRow(-1, Option(username)))
+    dbConfig.db.run(insertActions)
     val dataf = dbConfig.db.run(Users.filter(d => d.username === username).result)
     dataf.map(data => Ok(views.html.game(username, data)))
     
@@ -82,11 +85,24 @@ class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: D
     )
     
   }
- /* 
+ 
   def updateStats(score: Int) = Action.async{implicit request =>
-    val dataf = dbConfig.db.run(Users.filter(d => d.username === username).result)
-    
-    
-  }*/
+    //val dataf = dbConfig.db.run(Users.filter(d => d.username === username).result)
+    val q1 = for{d <- Users if d.username === username} yield d.highscore1
+    val anotherf = dbConfig.db.run(q1.result)
+    anotherf.map(data => {
+      data(0) match{
+        case Some(x) => {if(x < score){
+          val dataf = dbConfig.db.run(q1.update(Option(score)))
+          dataf.map(inside => Ok("Inner"))  
+        }}
+        case None => {
+          val dataf = dbConfig.db.run(q1.update(Option(score)))
+          dataf.map(inside => Ok("inner"))
+        }
+      }
+      Ok("Done!")}
+      )
+  }
   
 }

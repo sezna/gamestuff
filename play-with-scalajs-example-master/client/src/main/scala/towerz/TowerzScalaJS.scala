@@ -100,6 +100,8 @@ gradient.addColorStop(1.0,"red");
 // Fill with gradient
 ctx.fillStyle=gradient;
 ctx.fillText("GAME OVER",205,330);
+var scoresDiv = document.getElementById("updateForm")
+	scoresDiv.innerHTML = """<form action= "@routes.UserController.updateStats(""" + score + """)" method= "POST"><input type="submit" value="Update the stats"></form>"""
 	}
 
 	if(!paused) {

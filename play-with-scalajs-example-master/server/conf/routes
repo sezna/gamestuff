@@ -12,5 +12,6 @@ GET		/user/setUser			    controllers.UserController.setUser
 GET		/user/addUser				controllers.UserController.addUser
 GET		/game						controllers.UserController.goGame
 GET		/game2						controllers.UserController.goGameTest
+POST	/updateStats				controllers.UserController.updateStats(score: Int)
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
