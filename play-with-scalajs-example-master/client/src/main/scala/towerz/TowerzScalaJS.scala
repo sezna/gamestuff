@@ -110,7 +110,10 @@ var scoresDiv = document.getElementById("updateForm")
 	stats.innerHTML = "Health:" + health + "      Euros:" + euros + "     Score:"+score;
 	if(rando.nextInt(100) < 30) {
 	var newEnemy = e.createEnemy()
-	enemies.append(newEnemy)
+	newEnemy.health = 300 * ( if ( score > 80 ) {  score / 80 } else { 1 }  ) 
+	if (math.random < 0.05 * { if ( score > 50 ) {  score / 50 } else { 1 } } ) { // terse
+					enemies.append(newEnemy)
+	}
 	}
 
 	//Move & Garbage Collect phase

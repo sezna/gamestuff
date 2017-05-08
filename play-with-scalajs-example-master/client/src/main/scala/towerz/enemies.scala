@@ -28,8 +28,8 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
   def draw(ctx: CanvasRenderingContext2D){
     ctx.beginPath();
     ctx.fillStyle = "#000000";
-    //ctx.fillStyle = "#00"+(Math.floor((this.health/maxHealth)*255))+"00";
-	ctx.fillStyle = "#"+ ((this.health/this.maxHealth)*10040319).toInt.toHexString;
+    ctx.fillStyle = "#00"+(Math.floor((this.health/maxHealth)*255)%255)+"00";
+	//ctx.fillStyle = "#"+ ((this.health/this.maxHealth)*10040319).toInt.toHexString;
     ctx.arc(this.x,this.y,this.radius,0,2*Math.PI,false);
     //ctx.fillRect(x,y,radius,radius);
     ctx.fill();
