@@ -70,6 +70,7 @@ object Towerz extends JSApp {
 											e.health = e.health * 2
 											e.radius += 4
 											e.reward = e.reward * 2
+											e.adjustMaxHealth(e.health)
 										}
 					)
 					}

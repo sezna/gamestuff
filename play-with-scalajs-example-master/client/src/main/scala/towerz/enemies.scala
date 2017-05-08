@@ -21,7 +21,7 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
   }
 
   var alive = true;
-  var maxHealth = 255.0;
+  var maxHealth = health;
   health = 255;
   var enemiesKilled = 0;
 
@@ -37,6 +37,9 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
     print("Drawn");
 
   }
+	def adjustMaxHealth(h: Int) {
+			maxHealth = h
+	}
 
   def makePath(width: Int, height: Int):ArrayBuffer[pathSegment] = {
     var turningPointNum = 8;
