@@ -131,7 +131,7 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
     var x = turningPoints(0).x
     var enemyRadius = 6;
     var eTeam = team;
-    var enemyVel = 2 + (enemiesKilled / 90);
+    var enemyVel = 10 + (enemiesKilled / 90);
     if(enemyVel > 20){
       enemyVel = 20;
     }

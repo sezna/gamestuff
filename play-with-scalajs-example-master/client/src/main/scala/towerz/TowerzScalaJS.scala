@@ -75,15 +75,17 @@ def main() {
 
 	if(health < 0) {
 		paused = true
-		ctx.font="30px Verdana";
+ctx.fillStyle="black";
+ctx.fillRect(320-130,320-40,260,80);
+		ctx.font="40px Verdana";
 // Create gradient
-var gradient=ctx.createLinearGradient(0,0,640,0);
+var gradient=ctx.createLinearGradient(0,0,1200,0);
 gradient.addColorStop(0,"magenta");
 gradient.addColorStop(0.5,"blue");
 gradient.addColorStop(1.0,"red");
 // Fill with gradient
 ctx.fillStyle=gradient;
-ctx.fillText("GAME OVER",270,300);
+ctx.fillText("GAME OVER",205,335);
 	}
 
 	if(!paused) {
@@ -138,6 +140,12 @@ ctx.fillText("GAME OVER",270,300);
     		 ctx.beginPath();
     		 ctx.moveTo(currentPoint.x, currentPoint.y);
     		 ctx.lineTo(nextPoint.x, nextPoint.y);
+    		 ctx.closePath();
+
+    		 ctx.stroke(); 
+		
+		 ctx.beginPath();
+    		 ctx.moveTo(currentPoint.x, currentPoint.y);
     		 ctx.lineTo(currentPoint.x, currentPoint.y);
     		 ctx.closePath();
 
