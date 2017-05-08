@@ -17,9 +17,16 @@ class Tower (var team:Int, var kind:Int, var x:Double, var y:Double)   {
       case 3  => (400, "green", 200, 20)
       case 4  => (1500, "blue", 300, 50)
     }
+  
+  var rotation = 0.0
   def display(ctx: CanvasRenderingContext2D) {
+
+	ctx.save();
+	ctx.translate(this.x, this.y);
+	ctx.rotate(this.rotation);
     ctx.fillStyle = this.color;
-    ctx.fillRect(x, y, 20, 20);
+    ctx.fillRect(-10, -10, 20, 20);
+	ctx.restore();
     //var tower1img = document.getElementById("tower1img").asInstanceOf[html.Image];
     //var image:HTMLImageElement = new HTMLImageElement();
     // var image = dom.document.createElement("tower1gif").asInstanceOf[html.Image];
@@ -30,8 +37,12 @@ class Tower (var team:Int, var kind:Int, var x:Double, var y:Double)   {
   }
 
   def shoot(e:Enemy,ctx: CanvasRenderingContext2D){
+
      var dx = this.x - e.x;
      var dy = this.y - e.y;
+
+	this.rotation = Math.atan(dy/dx);
+
      ctx.strokeStyle = this.color;
      ctx.beginPath();
      ctx.moveTo(this.x, this.y);
@@ -39,5 +50,6 @@ class Tower (var team:Int, var kind:Int, var x:Double, var y:Double)   {
      ctx.closePath();
 
      ctx.stroke();
+
   }
 }

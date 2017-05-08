@@ -2,8 +2,22 @@
 
 @main("Another Name"){
 
-	<h3>Let's pretend that I am a game page:)</h3>
+	<center><h3>This is now a game.</h3>
 	<body id = "body"> 
+
+	<canvas id ="canvas"> </canvas>
+	<br><br>
+	Buy towers now! They're top notch! <br>
+	<input id="tower1" type="button" value="Tower 1 (30€)" onclick="chooseTowerType(1);"/>
+	<input id="tower2" type="button" value="Tower 2 (100€)" onclick="chooseTowerType(2);"/>
+	<input id="tower3" type="button" value="Tower 3 (400€)" onclick="chooseTowerType(3);"/>
+	<input id="tower4" type="button" value="Tower 4 (1500€)" onclick="chooseTowerType(4);"/>
+	<br>
+	<p id = "Stats"></p>
 	</body>	
 
+	<img id="tower1img" src="tower1.gif">
+	<img id="tower2img" src="tower2.gif">
+	<img id="tower3img" src="tower3.gif" style="display:none;">
+	<img id="tower4img" src="tower4.gif" style="display:none;">
 }

@@ -50,13 +50,13 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
     }
 
     if(tp.length > 0){
-    	tp.sortBy(t => t.y);
+    	tp = tp.sortBy(t => t.y);
     }
 
-    var firstPoint = new pathSegment(tp(0).x,tp(0).y,tp(0).direction);
+    var firstPoint = new pathSegment(tp(0).x,0,tp(0).direction);
     tp.insert(0,firstPoint);
     var i = 0;
-    for( i <-1 until tp.length-1 by 2){
+    for( i <-1 until (tp.length-1)*2-1 by 2){
       var midPoint = new pathSegment(tp(i+1).x,tp(i).y,6);
       if(tp(i+1).x-tp(i).x > 0){
         tp(i).direction = 3;
@@ -129,7 +129,7 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
   def createEnemy():Enemy = {
 
     var x = turningPoints(0).x
-    var enemyRadius = 10;
+    var enemyRadius = 6;
     var eTeam = team;
     var enemyVel = 2 + (enemiesKilled / 90);
     if(enemyVel > 20){
