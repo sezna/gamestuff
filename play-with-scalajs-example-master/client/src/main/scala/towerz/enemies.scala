@@ -38,10 +38,11 @@ class Enemy(team:Int, var x:Int, var y:Int, var v:Int, var color:String, var hea
 
   def draw(ctx: CanvasRenderingContext2D){
     ctx.beginPath();
-		val percentageOfHealth = ((this.health / this.maxHealth) * 250).toInt
+		val percentageOfHealth = ((this.health.toDouble - 1 / this.maxHealth) * 255).toInt
     ctx.fillStyle = makeHexColor(percentageOfHealth)
-
-		g.console.log(makeHexColor(percentageOfHealth));
+		this.radius = { if (this.health < 6000) { this.health / 1000 } else { 31 } } + ( this.health / this.maxHealth.toFloat  * 5).toInt
+//		g.console.log("health:" + this.health + " maxHealth: " + this.maxHealth + " out of 255: " + percentageOfHealth)
+//		g.console.log(makeHexColor(percentageOfHealth));
 	//ctx.fillStyle = "#"+ ((this.health/this.maxHealth)*10040319).toInt.toHexString;
     ctx.arc(this.x,this.y,this.radius,0,2*Math.PI,false);
     //ctx.fillRect(x,y,radius,radius);

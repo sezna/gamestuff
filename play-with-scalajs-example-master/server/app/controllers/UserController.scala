@@ -101,7 +101,7 @@ class UserController @Inject()(val messagesApi: MessagesApi, dbConfigProvider: D
           dataf.map(inside => Ok("inner"))
         }
       }
-      Ok("Done!")}
+      Redirect("/game")}
       )
   }
   

@@ -24,13 +24,11 @@
 	<br>
 	
 	<table border="1">
-		<tr><th>Username</th><th>Highscore1</th><th>Wins</th><th>Losses</th></tr>
+		<tr><th>Username</th><th>Highscore1</th></tr>
 		@for(d <- data) {
 			<tr>
 			<td>@d.username</td>
 			<td>@d.highscore1</td>
-			<td>@d.wins</td>
-			<td>@d.losses</td>
 			</tr>
 		}
 	</table>

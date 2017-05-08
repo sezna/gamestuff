@@ -29,7 +29,7 @@ object Towerz extends JSApp {
 
 	var e = new Enemy(1,1,1,1,"a",1,1,1,null)
 	var euros = 100;
-	var health = 30;
+	var health = 20;
 	var score = 3;
 	
 	val rando = new scala.util.Random()
@@ -69,8 +69,8 @@ object Towerz extends JSApp {
 						enemies.foreach((e: Enemy) => {
 											e.v += 1
 											e.health = e.health * 2
-											e.radius += 4
-											e.reward = e.reward * 2
+											e.radius += 1
+											e.reward = e.health / 50
 											e.adjustMaxHealth(e.health)
 										}
 					)
@@ -115,7 +115,8 @@ ctx.fillStyle=gradient;
 ctx.fillText("GAME OVER",205,330);
 if ( ! displayScores ) {
 				var scoresDiv = document.getElementById("updateForm")
-	scoresDiv.innerHTML = """<form action= "@routes.UserController.updateStats(""" + score + """)" method= "POST"><input type="submit" value="Update the stats"></form>"""
+//	scoresDiv.innerHTML = """<form action= "updateStats?score=""" + score + """ method= "GET"><input type="submit" value="Update the stats"></form>"""
+	scoresDiv.innerHTML = "<a href=\"updateStats?score=" + score + "\"> Update Score </a>"
 	displayScores = true;
 }
 	}
@@ -125,9 +126,10 @@ if ( ! displayScores ) {
 	print("Advancing")
 	stats.innerHTML = "Health:" + health + "      Euros:" + euros + "     Score:"+score;
 	if(rando.nextInt(100) < 30) {
-	var newEnemy = e.createEnemy()
-	newEnemy.health = 300 * ( if ( score > 80 ) {  score / 80 } else { 1 }  ) 
-	if (math.random < 0.05 * { if ( score > 50 ) {  score / 50 } else { 1 } } ) { // terse
+					var newEnemy = e.createEnemy()
+					newEnemy.health = 300 + 5 * ( if ( score > 300 ) {  score / 300 } else { 1 }  ) 
+					newEnemy.reward = newEnemy.health / 50
+	if (math.random < 0.07 + ( 0.02 * { if ( score > 80 ) {  score / 80 } else { 1 } } )  ) { // terse
 					enemies.append(newEnemy)
 	}
 	}
@@ -138,9 +140,9 @@ if ( ! displayScores ) {
 	var x = 0;
       for(x <- enemies.length-1 to 0 by -1){
 	 if(enemies(x).health <= 0){
+					score += enemies(x).reward
+					euros += enemies(x).reward
           enemies -= enemies(x);
-	  score += 30;
-	  euros +=5;
         } 
       }
 
